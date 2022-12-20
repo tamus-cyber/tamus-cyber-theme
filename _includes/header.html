@@ -66,210 +66,36 @@
         <nav class="nav-primary genesis-responsive-menu" aria-label="Main Site Navigation" itemscope=""
           itemtype="https://schema.org/SiteNavigationElement" id="genesis-nav-primary">
           <div class="wrap">
-            <ul>
-              {% comment %} Pull list from _data/header-nav {% endcomment %}
-              {% for item in site.data.header-nav.nav-items %}
-                <li id="{{ item.id }}" class="nav-item dropdown">
-                  <a href="{{ item.url }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">{{ item.title }}</a>
-                  <div aria-labelledby="{{ item.id }}" class="dropdown-menu wide-dropdown-menu">
-                    <div class="d-flex justify-content-start dropdown-menu-content">
-                      {% for entry in item.subfolderitems %}
-                        <a class="dropdown-item" href="{{ entry.url }}">{{ entry.page }}</a>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </li>
-              {% endfor %}
-            </ul>
-
             <ul id="menu-header-global-navigation"
               class="menu genesis-nav-menu menu-primary js-superfish sf-js-enabled sf-arrows"
               style="touch-action: pan-y;">
-              <li id="menu-item-1005"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1005">
-                <a href="http://ittamusedu.local/famis/about/" itemprop="url" class="sf-with-ul"><span
-                    itemprop="name">About</span></a>
-                <button class="sub-menu-toggle dashicons-before dashicons-arrow-down-alt2" aria-expanded="false"
-                  aria-pressed="false"><span class="screen-reader-text">Submenu</span></button>
-                <ul class="sub-menu" style="display: none;">
-                  <li id="menu-item-1145"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1145"><a
-                      href="http://ittamusedu.local/famis/about/famis-and-canopy-applications/" itemprop="url"><span
-                        itemprop="name">FAMIS and Canopy Applications</span></a></li>
-                  <li id="menu-item-1053"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1053"><a
-                      href="http://ittamusedu.local/famis/about/famis-data-in-business-objects/" itemprop="url"><span
-                        itemprop="name">FAMIS Data in BusinessObjects</span></a></li>
-                  <li id="menu-item-1054"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1054"><a
-                      href="http://ittamusedu.local/famis/about/famis-governance/" itemprop="url"><span
-                        itemprop="name">FAMIS Governance</span></a></li>
-                  <li id="menu-item-1040"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1040"><a
-                      href="http://ittamusedu.local/famis/about/famis-team/" itemprop="url"><span itemprop="name">FAMIS
-                        Services Team</span></a></li>
-                  <li id="menu-item-1765"
-                    class="menu-item menu-item-type-post_type menu-item-object-news menu-item-1765"><a
-                      href="http://ittamusedu.local/famis/news/financial-systems-modernization-project-website/"
-                      itemprop="url"><span itemprop="name">Financial Systems Modernization Project</span></a></li>
-                </ul>
-              </li>
-              <li id="menu-item-168"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-168"><a
-                  href="http://ittamusedu.local/famis/contacts/" itemprop="url" class="sf-with-ul"><span
-                    itemprop="name">Contacts</span></a>
-                <button class="sub-menu-toggle dashicons-before dashicons-arrow-down-alt2" aria-expanded="false"
-                  aria-pressed="false"><span class="screen-reader-text">Submenu</span></button>
-                <ul class="sub-menu" style="display: none;">
-                  <li id="menu-item-1146"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1146"><a
-                      href="http://ittamusedu.local/famis/contacts/contact-famis-services/" itemprop="url"><span
-                        itemprop="name">Contact FAMIS Services</span></a></li>
-                  <li id="menu-item-1147"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1147"><a
-                      href="http://ittamusedu.local/famis/contacts/contact-production-services/" itemprop="url"><span
-                        itemprop="name">Contact FAMIS Production Services</span></a></li>
-                  <li id="menu-item-1139"
-                    class="highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-1139"><a
-                      href="http://ittamusedu.local/famis/contacts/famis-security-admins/" itemprop="url"><span
-                        itemprop="name">FAMIS Security Administrators List</span></a></li>
-                  <li id="menu-item-1149"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1149"><a
-                      href="http://ittamusedu.local/famis/contacts/concur-team/" itemprop="url"><span
-                        itemprop="name">Concur Operational Team Contact List</span></a></li>
-                  <li id="menu-item-1138"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1138"><a
-                      href="http://ittamusedu.local/famis/contacts/concur-security-admins/" itemprop="url"><span
-                        itemprop="name">Concur Security Administrator Contact List</span></a></li>
-                  <li id="menu-item-1118"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1118"><a
-                      href="http://ittamusedu.local/famis/contacts/ce-requestors/" itemprop="url"><span
-                        itemprop="name">FAMIS Change Enhancement Approvers / Requestors List</span></a></li>
-                  <li id="menu-item-1361"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1361"><a
-                      href="http://ittamusedu.local/famis/contacts/famis-interface-coordinators/" itemprop="url"><span
-                        itemprop="name">FAMIS Interface Coordinators</span></a></li>
-                  <li id="menu-item-1119"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1119"><a
-                      href="http://ittamusedu.local/famis/contacts/report-requestors/" itemprop="url"><span
-                        itemprop="name">FAMIS Report Requestors List</span></a></li>
-                </ul>
-              </li>
-              <li id="menu-item-169"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-169"><a
-                  href="http://ittamusedu.local/famis/docs/" itemprop="url" class="sf-with-ul"><span
-                    itemprop="name">Documentation</span></a>
-                <button class="sub-menu-toggle dashicons-before dashicons-arrow-down-alt2" aria-expanded="false"
-                  aria-pressed="false"><span class="screen-reader-text">Submenu</span></button>
-                <ul class="sub-menu" style="display: none;">
-                  <li id="menu-item-1155"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1155"><a
-                      href="http://ittamusedu.local/famis/docs/tutorials/" itemprop="url"><span
-                        itemprop="name">Tutorials</span></a></li>
-                  <li id="menu-item-1334"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1334"><a
-                      href="http://ittamusedu.local/famis/docs/core-concepts/" itemprop="url"><span itemprop="name">Core
-                        Concepts</span></a></li>
-                  <li id="menu-item-1333"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1333"><a
-                      href="http://ittamusedu.local/famis/docs/white-papers/" itemprop="url"><span itemprop="name">White
-                        Papers</span></a></li>
-                  <li id="menu-item-1280"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1280"><a
-                      href="http://ittamusedu.local/famis/docs/reference/manuals/" itemprop="url"><span
-                        itemprop="name">User Manuals</span></a></li>
-                  <li id="menu-item-2517"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2517"><a
-                      href="http://ittamusedu.local/famis/docs/reference/" itemprop="url"><span itemprop="name">Tools:
-                        Glossary, Codes, Crosswalks &amp; Screen Info</span></a></li>
-                </ul>
-              </li>
-              <li id="menu-item-1055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1055"><a
-                  title="How to access FAMIS reports in Laserfiche."
-                  href="http://ittamusedu.local/famis/tutorials/famis-reports-in-laserfiche/" itemprop="url"><span
-                    itemprop="name">Laserfiche</span></a></li>
-              <li id="menu-item-1112"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1112">
-                <a href="http://ittamusedu.local/famis/updates/" itemprop="url" class="sf-with-ul"><span
-                    itemprop="name">News &amp; Updates</span></a>
-                <button class="sub-menu-toggle dashicons-before dashicons-arrow-down-alt2" aria-expanded="false"
-                  aria-pressed="false"><span class="screen-reader-text">Submenu</span></button>
-                <ul class="sub-menu" style="display: none;">
-                  <li id="menu-item-1127"
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1127"><a
-                      href="/famis/calendar/" itemprop="url"><span itemprop="name">Calendar</span></a></li>
-                  <li id="menu-item-1110"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1110"><a
-                      href="http://ittamusedu.local/famis/updates/alerts/" itemprop="url"><span itemprop="name">Alerts,
-                        Maintenance and Outage Notices</span></a></li>
-                  <li id="menu-item-1111"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1111"><a
-                      href="http://ittamusedu.local/famis/updates/release-notes/" itemprop="url"><span
-                        itemprop="name">Release Notes for FAMIS Updates</span></a></li>
-                  <li id="menu-item-1756"
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1756"><a
-                      title="Learn more about the future of FAMIS." href="https://it.tamus.edu/modernization/"
-                      itemprop="url"><span itemprop="name">Financial Systems Modernization Project</span></a></li>
-                </ul>
-              </li>
-              <li id="menu-item-1279"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1279">
-                <a href="http://ittamusedu.local/famis/services/" itemprop="url" class="sf-with-ul"><span
-                    itemprop="name">Services &amp; Requests</span></a>
-                <button class="sub-menu-toggle dashicons-before dashicons-arrow-down-alt2" aria-expanded="false"
-                  aria-pressed="false"><span class="screen-reader-text">Submenu</span></button>
-                <ul class="sub-menu" style="display: none;">
-                  <li id="menu-item-1826"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1826"><a
-                      href="http://ittamusedu.local/famis/services/famis-help/" itemprop="url"><span
-                        itemprop="name">FAMIS Help</span></a></li>
-                  <li id="menu-item-1151"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1151"><a
-                      href="http://ittamusedu.local/famis/services/change-enhancement-request/" itemprop="url"><span
-                        itemprop="name">Change / Enhancement Request</span></a></li>
-                  <li id="menu-item-1113"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1113"><a
-                      href="http://ittamusedu.local/famis/services/famis-training/" itemprop="url"><span
-                        itemprop="name">FAMIS Training</span></a></li>
-                  <li id="menu-item-1150"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1150"><a
-                      href="http://ittamusedu.local/famis/services/request-forms/" itemprop="url"><span
-                        itemprop="name">Request Forms</span></a></li>
-                  <li id="menu-item-1108"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1108"><a
-                      href="http://ittamusedu.local/famis/services/interface-file-feeds/" itemprop="url"><span
-                        itemprop="name">Interface – File Feeds</span></a></li>
-                  <li id="menu-item-1107"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1107"><a
-                      href="http://ittamusedu.local/famis/services/production/" itemprop="url"><span
-                        itemprop="name">Production Contacts, Reports &amp; Schedule</span></a></li>
-                  <li id="menu-item-1109"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1109">
-                    <a href="http://ittamusedu.local/famis/services/security/" itemprop="url" class="sf-with-ul"><span
-                        itemprop="name">Security Contacts &amp; Forms</span></a>
-                    <button class="sub-menu-toggle dashicons-before dashicons-arrow-down-alt2" aria-expanded="false"
-                      aria-pressed="false"><span class="screen-reader-text">Submenu</span></button>
-                    <ul class="sub-menu" style="">
-                      <li id="menu-item-1153"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1153"><a
-                          href="http://ittamusedu.local/famis/services/security/security-access-request/"
-                          itemprop="url"><span itemprop="name">Security Access Request</span></a></li>
-                      <li id="menu-item-1154"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1154"><a
-                          href="http://ittamusedu.local/famis/services/security/security-audit/" itemprop="url"><span
-                            itemprop="name">Security Audit Reports</span></a></li>
-                    </ul>
+              {% comment %} Pull list from _data/header-nav {% endcomment %}
+              {% assign nav_size = site.data.header-nav.nav-items | size %}
+              
+              {% if nav_size > 0 %}
+                {% for item in site.data.header-nav.nav-items %}
+                  {% assign subfolder_size = item.subfolderitems | size %}
+                  <li id="{{ item.id }}" class="menu-item">
+                    <a href="{{ item.url }}" itemprop="url" class="sf-with-ul">
+                      <span itemprop="name">{{ item.title }}</span>
+                    </a>
+                    {% if subfolder_size > 0 %}
+                      <button class="sub-menu-toggle dashicons-before dashicons-arrow-down-alt2" aria-expanded="false" aria-pressed="false">
+                        <span class="screen-reader-text">Submenu</span>
+                      </button>
+                      <ul class="sub-menu" style="display: none;">
+                        {% for entry in item.subfolderitems %}
+                        <li class="menu-item">
+                          <a href="{{ entry.url }}" itemprop="url">
+                          <span itemprop="name">{{ entry.page }}</span>
+                          </a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}                  
                   </li>
-                  <li id="menu-item-1152"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1152"><a
-                      href="http://ittamusedu.local/famis/services/year-end-jobs/" itemprop="url"><span
-                        itemprop="name">Year-End Jobs</span></a></li>
-                  <li id="menu-item-2446"
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2446"><a
-                      href="https://apps3.system.tamus.edu/famisrequest/YERequest.aspx" itemprop="url"><span
-                        itemprop="name">Year-End Job Request Form</span></a></li>
-                </ul>
-              </li>
+                {% endfor %}
+              {% endif %}
               <li class="menu-item search-form-wrapper">
                 <form method="get" name="search" class="search-form" role="search"
                   action="https://it.tamus.edu/">
@@ -285,11 +111,6 @@
                 <a id="oit-link" href="https://it.tamus.edu/" itemprop="url" class="sf-with-ul">
                   <span itemprop="name">Office of Information Technology</span>
                 </a>
-                <button id="oit-sub-menu-toggle" class="dashicons-before dashicons-arrow-down-alt2"
-                  aria-expanded="false" aria-pressed="false">
-                  <span class="screen-reader-text">Submenu</span>
-                </button>
-
               </li>
             </ul>
           </div>
