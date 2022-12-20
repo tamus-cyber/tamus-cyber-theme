@@ -5,6 +5,7 @@ _site
 vendor
 /node_modules/
 *.code-workspace
+*.lock
 
 ### MacOS ###
 *.DS_Store
