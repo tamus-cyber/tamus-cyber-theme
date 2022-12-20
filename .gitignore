@@ -4,6 +4,7 @@ _site
 .jekyll-metadata
 vendor
 /node_modules/
+*.code-workspace
 
 ### MacOS ###
 *.DS_Store
