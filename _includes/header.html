@@ -6,13 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="Created" property="dc:created" content="2020-10-07" />
   <meta name="Last-Modified" property="dc:modified" content="2022-10-27" />
-  <title>Collaboration</title>
-
+  <title>{{ page.title }}</title>
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+  {% endif %}
+  
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
   <link rel="stylesheet" type="text/css" media="all" href="/assets/css/style.css" />
   <link rel="stylesheet" type="text/css" media="all"
     href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400i%2C600%2C700%2C800&#038;display=swap&#038;ver=2.2.0" />
+
+  {% if page.custom-css %}
+    <link rel="stylesheet" type="text/css" href="/assets/css/{{ page.custom-css }}">
+  {% endif %}
 
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/jquery-migrate.min.js"></script>
@@ -59,6 +66,22 @@
         <nav class="nav-primary genesis-responsive-menu" aria-label="Main Site Navigation" itemscope=""
           itemtype="https://schema.org/SiteNavigationElement" id="genesis-nav-primary">
           <div class="wrap">
+            <ul>
+              {% comment %} Pull list from _data/header-nav {% endcomment %}
+              {% for item in site.data.header-nav.nav-items %}
+                <li id="{{ item.id }}" class="nav-item dropdown">
+                  <a href="{{ item.url }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">{{ item.title }}</a>
+                  <div aria-labelledby="{{ item.id }}" class="dropdown-menu wide-dropdown-menu">
+                    <div class="d-flex justify-content-start dropdown-menu-content">
+                      {% for entry in item.subfolderitems %}
+                        <a class="dropdown-item" href="{{ entry.url }}">{{ entry.page }}</a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+
             <ul id="menu-header-global-navigation"
               class="menu genesis-nav-menu menu-primary js-superfish sf-js-enabled sf-arrows"
               style="touch-action: pan-y;">
