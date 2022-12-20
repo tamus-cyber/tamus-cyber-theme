@@ -1,0 +1,65 @@
+nav-items:
+  - title: About
+    url: /about/index.html
+    id: about-dropdown
+    subfolderitems:
+      - page: Administration &amp; Leadership
+        url: /about/leadership/index.html
+      - page: Colleges &amp; Campuses
+        url: /about/campuses/index.html
+      - page: Diversity
+        url: /about/diversity.html
+      - page: History
+        url: /about/history.html
+      - page: Priorities
+        url: /about/priorities/index.html
+      - page: News
+        url: https://vitalrecord.tamhsc.edu/
+  - title: Academics
+    url: /academics/index.html
+    id: academics-dropdown
+    subfolderitems:
+      - page: Admissions
+        url: /academics/admissions.html
+      - page: Degrees &amp; Programs
+        url: /academics/degrees-programs.html
+      - page: Faculty
+        url: /academics/faculty/index.html
+      - page: Resources
+        url: /academics/resources.html
+      - page: Transformational Learning
+        url: /academics/transformational-learning.html
+  - title: Clinical
+    url: /clinical/index.html
+    id: clinical-dropdown
+    subfolderitems:
+      - page: Clinical Learning Resource Center
+        url: /clinical/clrc/index.html
+      - page: Patient Care
+        url: /clinical/patient-care.html
+      - page: Practice Plan
+        url: /clinical/practice-plan.html
+  - title: Community
+    url: /community/index.html
+    id: community-dropdown
+    subfolderitems:
+      - page: Community Education
+        url: /community/community-education.html
+      - page: Partnerships &amp; Initiatives
+        url: /community/partnerships.html
+      - page: Professional Education
+        url: /community/professional-education.html
+#      - page: Economic Impact
+#        url: /community/impact.html
+  - title: Research
+    url: /research/index.html
+    id: research-dropdown
+    subfolderitems:
+      - page: Centers &amp; Institutes
+        url: /about/centers-institutes.html
+      - page: Innovation
+        url: /research/innovation.html
+      - page: Research Areas
+        url: /research/research-areas.html
+      - page: Research News
+        url: https://vitalrecord.tamhsc.edu/research/
