@@ -302,7 +302,7 @@
     }
 
     input[type="submit"] {
-      background: $maroon url("../../images/search-glass-white.svg") calc(100% - 10px) 12px no-repeat;
+      background: $maroon url("/assets/images/search-glass-white.svg") calc(100% - 10px) 12px no-repeat;
       background-size: 16px;
       border: 2px solid $maroon;
       display: block;
@@ -314,7 +314,7 @@
       transition: none;
 
       &:hover, &:focus {
-        background: #fff url("../../images/search-glass-maroon.svg") calc(100% - 10px) 12px no-repeat;
+        background: #fff url("/assets/images/search-glass-maroon.svg") calc(100% - 10px) 12px no-repeat;
         background-size: 16px;
         color: $maroon;
       }
