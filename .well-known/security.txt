@@ -1,0 +1,8 @@
+# Our information security contact information
+Contact: mailto:contact@soc.tamus.edu
+Contact: tel:+19792340030
+
+# Our OpenPGP key
+Encryption: PGP/GPG Key: 0x9561479D
+Encryption: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x8be54e1c1d48434f4a551879ff77468c9561479d
+Encryption: https://keys.openpgp.org/vks/v1/by-fingerprint/8BE54E1C1D48434F4A551879FF77468C9561479D
