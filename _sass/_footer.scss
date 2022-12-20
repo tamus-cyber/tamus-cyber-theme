@@ -1,0 +1,72 @@
+/**
+ * Footer styling including keyboard navigation styling
+ *
+ * @since 1.0.0
+ */
+
+
+.site-footer {
+	background-color: $maroon;
+  border: 0;
+  font-size: .75rem;
+
+  // Align site footer content with body content
+  padding: 30px 0;
+  text-align: left;
+
+	.wrap {
+		margin: 0 auto;
+    padding: 0 35px;
+    max-width: $sitewidth * 1px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+	p {
+		color: $white;
+		margin-bottom: 15px;
+
+    // footer link styling
+		a {
+			border-bottom: 1px dotted #fff;
+			color: $white;
+			text-decoration: none;
+			font-weight: 600;
+
+			&:hover,
+			&:focus,
+      &:focus-visible,
+			&:active {
+				border-bottom: 1px solid #fff;
+			}
+
+      &:focus, &:focus-visible {
+        outline: 1px solid #fff;
+        outline-offset: 2px;
+      }
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.tamus-logo {
+    height: 84px;
+    margin: 35px auto;
+    width: 138px;
+
+    a {
+      display: block;
+      position: relative;
+      z-index: 100;
+
+      // Add outline only when navigated to using keyboard navigation
+			&:focus, &:focus-visible {
+        outline: 1px solid #fff;
+        outline-offset: 2px;
+      }
+    }
+  }
+}

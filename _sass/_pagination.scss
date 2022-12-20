@@ -1,0 +1,78 @@
+/**
+ * pagination styling including:
+ * google search results pagination: classes marked by "gsc"
+ * genesis pagination:
+ *
+ * @since 2.0.0
+ */
+
+// Pagination buttons on archive pages, calendar, etc. .content added to increase specificity
+.content .archive-pagination {
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    a {
+      @include pagination-link;
+    }
+
+    &.active a {
+      @include pagination-link-current;
+    }
+  } // end li
+
+  // Override width for previous and next links
+  .pagination-previous, .pagination-next {
+    a {
+      width: auto;
+    }
+  }
+} // end .content .archive-pagination
+
+// Make pagination look the same for Google custom search results
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+  @include pagination-link;
+}
+
+.gsc-cursor-page .gsc-cursor-current-page {
+  @include pagination-link-current;
+}
+
+// Make pagination look the same for pages using the List Category Posts plugin
+.content-sidebar-wrap .content .lcp_paginator {
+  padding-left: 0;
+
+  li {
+    border: unset;
+    padding: 0;
+    display: inline;
+    margin: 0 10px 10px 0;
+
+    a {
+      @include pagination-link;
+
+      // Adjust width for text. Note - we're replacing the text for back and next link with JS in oit.js
+      &.lcp_prevlink,
+      &.lcp_nextlink {
+        width: auto;
+      }
+    }
+
+    &.lcp_currentpage {
+      @include pagination-link;
+      @include pagination-link-current;
+
+      // In the List Category Posts plugin, the current page li does not have an anchor so it needs to behave differently than other pagination in WP where there is an a tag.
+      &:hover,
+      &:focus,
+      &:focus-visible,
+      &:active {
+        cursor: auto;
+        color: $maroon;
+        background-color: #fff;
+        text-decoration-style: none;
+      }
+    }
+  }
+}

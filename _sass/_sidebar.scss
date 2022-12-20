@@ -1,0 +1,47 @@
+/**
+ * Sidebar styling
+ *
+ * @since 1.0.0
+ */
+
+.sidebar {
+	padding: 0;
+
+	.widget {
+		background-color: $body-background-color;
+    margin-bottom: $widgetpadding * 1px;
+
+    .widget-wrap .textwidget {
+      padding: 0 $widgetpadding * 1px $widgetpadding * .75px;
+
+      // CTA - Call to action buttons
+      button,
+      .button,
+      .btn,
+      input[type="button"],
+      input[type="reset"],
+      input[type="submit"],
+      div.wpforms-container-full .wpforms-form input[type="submit"],
+      div.wpforms-container-full .wpforms-form button[type="submit"],
+      .wp-block-button .wp-block-button__link,
+      .wp-block-button.is-style-outline .wp-block-button__link {
+        @extend %maroon-cta-button;
+      }
+    }
+
+  } // end .widget
+
+	.widget_recent_entries  .widget-wrap ul {
+    padding: 0 $widgetpadding * 1px $widgetpadding * .75px;
+  }
+
+	.widgettitle,	h3 {
+		background-color: $darkblue;
+		color: $white;
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: $widgetpadding * .5px;
+		padding: 10px 20px;
+	}
+
+} // end .sidebar

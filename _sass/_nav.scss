@@ -1,0 +1,302 @@
+/**
+ * navigation styling including:
+ * main navigation: .nav-primary
+ * sub menu: #oit-site-sub-menu
+ * mobile styling: .menu toggle
+ *
+ * @since 1.0.0
+ */
+
+// Menu button for header nav on mobile
+.menu-toggle {
+  float: none;
+  margin: 0 auto 25px auto;
+  padding: 10px 10px 12px 9px;
+  color: #fff;
+  background-color: $blue;
+
+  &.active,
+  &:hover,
+  &:focus {
+    color: $blue;
+    background-color: #fff;
+    outline: 1px solid $blue;
+  }
+
+}
+
+// Wrapper around all header nav elements
+.nav-primary {
+  float: none;
+  background-color: $darkblue;
+
+  .wrap {
+    margin: 0 auto;
+  }
+
+  .genesis-nav-menu {
+    width: auto;
+    margin: 0px 0 0 5px;
+
+    .menu-item,
+    #oit-site-menu {
+      position: relative;
+
+      a {
+        font-size: 1rem;
+        color: $white;
+        line-height: 1.5;
+        padding: 10px;
+
+        &:hover,
+        &:focus,
+        &:active {
+          // add a white border on the left, using box shadow bc it won't move the link on hover
+          box-shadow: -4px 0 0 0 #fff;
+          outline: none;
+        }
+      }
+
+      // #oit-site-sub-menu is our copy of Genesis's .sub-menu
+      .sub-menu,
+      #oit-site-sub-menu {
+        border: none;
+        clear: both;
+        display: none;
+        margin: 0;
+        opacity: 1;
+        padding-left: 15px;
+        position: static;
+
+        a {
+          font-size: 0.875rem;
+          background-color: transparent;
+          color: #fff;
+          border: none;
+          transition: all 0.3s ease-in-out;
+
+          &:hover,
+          &:focus,
+          &:active {
+            outline: none;
+            text-decoration: underline solid #fff;
+          }
+        }
+      } // end .sub-menu
+    } // end .menu-item, #oit-site-menu
+
+    // arrow indicating if the sub menu is open or not
+    // #oit-sub-menu-toggle is our copy of Genesis's .sub-menu-toggle
+    .sub-menu-toggle,
+    #oit-sub-menu-toggle {
+      color: #fff;
+      float: right;
+      padding: 9px 10px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 100;
+      background-color: transparent;
+      border-width: 0;
+      display: block;
+      margin: 0 auto;
+      overflow: hidden;
+      text-align: center;
+      visibility: visible;
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: #fff;
+        outline: 1px dotted #fff;
+      }
+    } // end .sub-menu-toggle.  #oit-sub-menu-toggle
+
+    .search-form {
+      height: 36px;
+      border-bottom: 2px solid #fff;
+      overflow: visible;
+      margin: 20px 10px 10px 10px;
+      display: flex;
+
+      label {
+        @include hidetext;
+      }
+
+      // Placeholder Search text
+      ::placeholder {
+        color: #fff;
+        font-size: 1rem;
+      }
+
+      // Hide the placeholder when in focus
+      &:active,
+      &:focus,
+      &:focus-within {
+        // outline: 1px dotted #fff;
+        // outline-offset: 4px;
+        ::placeholder {
+          color: $darkblue;
+        }
+      }
+
+      .search-form-input,
+      .search-field {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        padding: 10px 10px 10px 1px;
+        font-size: 1rem;
+      }
+
+      // Outline only on keyboard navigation
+      // Negative rt margin, large rt padding and outline offset for positioning the field outline and text when focused
+      .search-field {
+        margin: 10px -19px 0 0;
+        padding-right: 26px;
+
+        &:focus {
+          outline: 1px solid #fff;
+          outline-offset: 10px;
+        }
+      }
+
+      .search-form-submit,
+      .search-button {
+        background: transparent url('../../images/search-glass-white.svg') 0 0 no-repeat;
+        background-size: 19px;
+        border-radius: 0;
+        width: 20px;
+        display: block;
+        padding: 10px 0 2px 0;
+        text-indent: 100vw;
+        margin: 10px 0 1px 0;
+        overflow: hidden;
+        height: 20px;
+
+        &:focus {
+          outline: 1px solid #fff;
+          outline-offset: 10px;
+        }
+      }
+    } // end .search-form
+
+    // Second copy for mobile of the OIT menu with services, contact, search
+    #oit-site-menu {
+      a, .sub-menu a {
+        color: $body-background-color;
+      }
+    }
+  } // end .genesis-nav-menu
+} // end .nav-primary
+
+// In-page navigation, displayed on the right side on desktop
+.content-sidebar-wrap {
+
+  //.sidebar wraps the sidebar navigation
+  .sidebar {
+    .widget {
+      background-color: transparent; // moving background color to div within widget-wrap
+
+      a {
+        font-size: 14.4px;
+        font-size: .9rem;
+        color: $blue;
+        text-decoration: underline solid $blue;
+
+        &:hover,
+        &:focus,
+        &:focus-visible,
+        &:active {
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+          text-decoration-color: $blue;
+          border-bottom: 0;
+        }
+
+        &:focus, &:focus-visible {
+          outline: $blue solid 1px;
+          outline-offset: 1px;
+        }
+
+        // mark the current page
+        &[aria-current="page"] {
+          font-style: italic;
+          font-weight: bold;
+        }
+      }
+
+      // buttons in the sidebar
+      button,
+      .button,
+      .btn {
+        color: #fff;
+      }
+
+      .widgettitle,
+      .widget-title {
+        margin-bottom: 0;
+      }
+
+      // align with sidebar heading
+      .widget-wrap>div,
+      .widget-wrap>ul {
+        padding: 20px;
+      }
+
+      // background color for sidebar widget areas
+      .widget-wrap .widget {
+        background-color: $body-background-color;
+      }
+
+      li li {
+        margin: 10px 0 10px 12px;
+      }
+    } // end .widget
+
+    // EZ table of contents plugin can add a TOC in the sidebar nav. It's html is slightly different.
+    .ez-toc .widget-wrap {
+      #ez-toc-widget-container {
+        // position sticky will only work if the parent container is the height of the content
+        // added JS to oit.js to add the body height to the .widget-wrap if .ez-toc exists in the sidebar
+        position: sticky;
+        top: 160px;
+        padding: 0;
+        line-height: 1.5;
+
+        // hide the toggle button for the nav area. have no idea why you would want that
+        .ez-toc-title-toggle {
+          display: none;
+        }
+
+        .ez-toc-list {
+          padding: 0;
+
+          li {
+            margin: 10px 0;
+            padding: 0 20px 0 20px;
+
+            a {
+              padding-left: 0;
+            }
+
+            &.active {
+              background-color: scale-color($body-background-color, $lightness: -10%, );
+              border-top: 1px dotted $blue;
+              border-bottom: 1px dotted $blue;
+
+              >a {
+                font-weight: normal;
+                font-style: italic;
+              }
+            }
+          }
+        }
+
+        nav {
+          padding: 10px 0 10px 0;
+        }
+      } // end .widget-wrap #ez-toc-widget-container
+    } // end .ez-toc .widget-wrap
+  } // end .widget-area
+} // end .content-sidebar-wrap

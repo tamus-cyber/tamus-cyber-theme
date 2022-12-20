@@ -1,0 +1,74 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+/**
+ * TAMUS custom variables.
+ * Imports Bootstrap's functions and variables files, overrides as needed.
+ *
+ * @since 1.0.0
+ */
+
+@import "variables";
+
+
+// Add Bootstrap 4
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/utilities";
+@import "bootstrap/print";
+
+
+// CSS copied from the Genesis framework
+@import 'genesis';
+
+
+// TAMUS customizations
+@import "mixins";
+@import "typography";
+@import 'structure';
+@import 'header';
+@import 'nav';
+@import 'search';
+@import 'footer';
+@import 'sidebar';
+@import 'cards';
+@import 'accordion';
+@import 'tabs';
+@import 'content';
+@import 'pagination';
+@import 'tablepress-global';
+@import 'alert';
+@import 'migrate_to_page_css'; // Temporary. These rules are specific to individual pages or templates.
+@import 'mediaqueries';
+@import 'print';

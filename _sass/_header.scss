@@ -1,0 +1,104 @@
+/**
+ * Site header styling
+ * .header-widget-area is utility menu on top right
+ *
+ * @since 1.0.0
+ */
+
+.site-header {
+  z-index: 1001;
+
+	.wrap {
+		margin: 0 auto;
+		max-width: $sitewidth * 1px;
+		position: relative;
+    z-index: 1;
+
+    .tamus-wrap-title-and-logo {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+
+      // Flip the order of elements. Makes the logo first and title second on mobile. Desktop version in _mediaqueries.scss
+      flex-direction: column-reverse;
+    }
+	} // end .wrap
+
+	.title-area {
+    float: none;
+    width: 100%;
+    padding: 15px 0 0 0;
+    margin-left: -1px; // The large type in this weight has a very small letter spacing before the first character, this fixes the alignment
+
+		.site-title {
+      line-height: 1.5;
+      font-size: 1.9375rem;  // 31px
+      font-weight: 800;
+
+			a {
+				color: $darkblue;
+				display: inline-block;
+        text-transform: uppercase;
+
+        &:active,
+        &:hover {
+          outline: 1px dotted;
+          outline-offset: 2px;
+        }
+
+        &:focus {
+          outline: 1px solid;
+          outline-offset: 2px;
+        }
+			}
+		}
+	} // end .title-area
+
+  //utility menu top right
+	.header-widget-area {
+    width: 284px;
+
+    #tamus-oit-logo {
+      margin-top: 20px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+        outline: 1px dotted;
+        outline-offset: 3px;
+      }
+    }
+
+		img {
+      margin-left: 0;
+			height: 48px;
+      width: 227.567px;
+      max-width: 227.57px;
+		}
+
+		.widget {
+			margin-bottom: 0;
+
+			ul {
+				&>li {
+					margin: 0;
+				}
+			}
+		}
+
+		a {
+			display: block;
+			margin-top: 18px;
+    }
+	} // end .header-widget-area - utility menu
+}
+
+// Target IE 10 and 11,
+// https://stackoverflow.com/questions/18907131/detecting-ie11-using-css-capability-feature-detection
+.msie .site-header,
+_:-ms-lang(x) .site-header,
+_:-ms-fullscreen .site-header {
+  // IE doesn't support position sticky
+  position: relative !important;
+}

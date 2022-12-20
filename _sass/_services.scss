@@ -1,0 +1,81 @@
+/**
+ * services page template styling
+ *
+ * @since 1.0.0
+ */
+
+.page-template-template-services {
+
+	.site-inner {
+		background-color: transparent;
+		padding-top: $sitepadding * 2.5px;
+	}
+
+	.entry-header {
+		@include hidetext;
+	}
+
+	//service card container
+	.service {
+		background-color: $white;
+		border-top: 4px solid $servicesgreen;
+		box-shadow: 0px 3px 6px #00000029;
+		float: left;
+		height: 300px;
+		margin-bottom: $sitepadding * 1px;
+		margin-right: 1.25%;
+		padding: $sitepadding * .5px;
+		width: 32.5%;
+
+		&:nth-child(3n + 1) {
+			clear: left;
+		}
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		&:nth-child(2) {
+			border-color: $servicesgold;
+		}
+
+		&:nth-child(3) {
+			border-color: $servicespurple;
+		}
+
+		&:nth-child(4) {
+			border-color: $sitered;
+		}
+
+		&:nth-child(5) {
+			border-color: $blue;
+		}
+
+		&:nth-child(6) {
+			border-color: $maroon;
+		}
+
+		h2 {
+			font-size: 21px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.description {
+			font-size: 18px;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		a {
+			color: $blue;
+			font-style: italic;
+			font-weight: 400;
+			text-decoration: none;
+		}
+
+		p {
+			margin-bottom: 15px;
+		}
+	}
+}

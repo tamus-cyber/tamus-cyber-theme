@@ -1,0 +1,427 @@
+/**
+ * Search results styling using google search engine
+ * Google search classes identifieable by "gs" or "gsc"
+ * Google was really verbose in their selectors and have a lot,
+ * of inline styles; we're having to be even more verbose to override...
+ * @since 1.0.0
+ */
+
+
+// making styles specific to search results page so it doesn't affect global search bar
+.page-template-template-search {
+  // Result title
+  .gsc-result .gs-title {
+    overflow: visible;
+  }
+  .gsc-control-cse .gs-spelling,
+  .gsc-control-cse .gs-result .gs-title,
+  .gsc-control-cse .gs-result .gs-title * {
+    font-size: 1.2rem;
+  }
+
+  // Result title anchor links
+  #genesis-content{
+    .gs-webResult.gs-result a.gs-title:link,
+    .gs-webResult.gs-result a.gs-title:link b,
+    .gs-imageResult a.gs-title:link,
+    .gs-imageResult a.gs-title:link b,
+    .gs-webResult.gs-result a {
+      @include anchor-links;
+    }
+  }
+
+  //margin top for search results container
+  .gsc-tabData.gsc-tabdActive {
+    margin-top: 40px;
+  }
+
+  .gsc-control-cse,
+  .gsc-control-cse .gsc-table-result {
+    font-family: $font-family-sans-serif !important;
+    font-size: 1rem !important;
+  }
+
+  //hide unnecessary header area with sorting element
+  .gsc-above-wrapper-area {
+    display: none;
+  }
+
+  .gs-webResult div.gs-visibleUrl {
+    color: $black;
+  }
+
+  //hide search result breadcrumbs
+  .gs-webResult div.gs-visibleUrl-long,
+  .gs-promotion div.gs-visibleUrl-long {
+    display: none !important;
+  }
+
+  //hide label below search result
+  .gs-per-result-labels {
+    display: none !important;
+  }
+
+  .gs-fileFormat, .gs-fileFormatType {
+    font-size: 1rem;
+    color: $black;
+  }
+
+  /* search results - no result message styling */
+  .gs-no-results-result .gs-snippet,
+  .gs-error-result .gs-snippet {
+    background-color: transparent;
+  }
+
+  /* taking out google branding*/
+  .gcsc-more-maybe-branding-root {
+    display: none !important
+  }
+
+  /* active page number*/
+  .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    @include pagination-link-active;
+  }
+
+  /*search promotion result */
+  .cse .gsc-webResult.gsc-result.gsc-promotion,
+  .gsc-webResult.gsc-result.gsc-promotion {
+    padding: 20px !important;
+    background-color: #EEF6FF !important;
+    color: #062D58 !important;
+    border: none !important;
+
+    &:hover {
+      -webkit-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.18);
+      -moz-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.18);
+      box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.18);
+      transition-timing-function: ease;
+      transition: 0.3s;
+    }
+  }
+
+  // image in promotion box
+  .gs-promotion-image-box img.gs-promotion-image,
+  .gs-promotion-image-box {
+    margin-right: 20px !important;
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .no-border {
+    border: none !important;
+  }
+
+  .scale:hover {
+    transform: none;
+  }
+
+  .gsc-search-button .gsc-search-button-v2 {
+    background-color: $maroon;
+    border: 1px solid $maroon;
+    border-radius: 0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin: 2px 0 2px 5px;
+    padding: 0;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-visible {
+      outline: $blue solid 1px;
+      outline-offset: 2px;
+      color: $blue;
+
+      svg {
+        fill: $blue;
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 100%;
+    }
+  }
+
+  table.gsc-search-box tbody {
+    border-bottom: none !important;
+
+    & td {
+      border-top: none !important;
+    }
+  }
+
+  //search box on search results page
+  .gsc-search-box-tools {
+    .gsc-search-box {
+      .gsc-input {
+        padding: 12px 0px 12px 0px !important;
+        width: 100%;
+        height: 38px;
+
+        .gsc-input-box {
+          padding-left: 10px;
+          border: 1px solid $border-gray;
+
+          &:focus-within {
+            outline: $blue solid 1px;
+            outline-offset: 2px;
+          }
+
+          table {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  //pagination styling
+  .gsc-results .gsc-cursor-box .gsc-cursor-page {
+    border-color: #fff;
+    background-color: #fff;
+    color: $blue;
+  }
+
+  // Google Programmable Search page
+  .gsc-control-cse {
+    padding: 0;
+    margin-top: 0;
+    font-family: $font-family-sans-serif;
+
+    // table container for the search box
+    .gsc-search-box {
+      max-width: 630px;
+
+      tbody,
+      td {
+        border: none;
+      }
+
+      td.gsc-input {
+        padding-right: 0;
+      }
+
+      td.gsc-search-button {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .gsc-input-box {
+      table {
+        margin-bottom: 0;
+      }
+
+      input.gsc-input {
+        padding: 3px 5px !important; //important added to override inline style
+      }
+
+      td.gsib_b {
+        padding: 0;
+      }
+
+      .gsst_a .gscb_a {
+        color: #333;
+        border-bottom: none;
+      }
+    }
+
+    // Wraps search results and facet tabs
+    .gsc-results-wrapper-visible {
+
+      // Wrapper for facet tabs sidebar
+      .gsc-positioningWrapper {
+        max-width: 1060px;
+      }
+
+      .gsc-refinementBlock {
+        // "Filter results by site" heading that we're adding in with JS
+        h2:first-child {
+          font-size: $h3-font-size;
+          margin-top: 1.333rem;
+        }
+      }
+
+      // Search results wrapper
+      .gsc-wrapper {
+        padding-right: 50px;
+        width: 100%;
+        max-width: 850px;
+      }
+
+      // An individual tab
+      .gsc-tabHeader {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        text-align: left;
+        background: transparent;
+        font-size: 1rem !important; // override important elsewhere
+        color: $blue !important; // override important in _misc.scss
+        border-bottom: none !important; // override important in _misc.scss
+
+        // active tab
+        &.gsc-tabhActive {
+          margin-top: 0;
+        }
+      } // end .gsc-tabHeader
+
+
+      .gsc-refinementHeader {
+        padding: 2px 10px 0 10px;
+
+        &.gsc-refinementhActive {
+          color: $blue;
+          border-bottom: none;
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+        }
+
+        &.gsc-refinementhInactive {
+          color: $blue;
+          background-color: transparent;
+          border-bottom: none;
+
+          &:hover,
+          &:focus,
+          &:focus-visible,
+          &:focus-within,
+          &:active {
+            color: $blue;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+          }
+
+          &:focus,
+          &:focus-visible,
+          &:focus-within {
+            outline: 1px solid $blue;
+            outline-offset: 1px;
+          }
+        }
+      }
+
+      .gsc-results {
+        width: auto;
+
+        .gsc-thumbnail-inside, .gsc-url-top, .gsc-table-result {
+          padding: 0;
+        }
+
+        // pagination wrapper
+        .gsc-cursor {
+          display: flex;
+          align-items: center;
+        }
+
+        // pagination item
+        .gsc-cursor-page {
+          @include pagination-link;
+        }
+
+        // end .gsc-cursor-page
+
+        .gsc-cursor-current-page {
+          background-color: #fff !important; // override important inline
+          color: $black !important; // override important inline
+          border-color: #ddd !important; // override important inline
+
+          &:hover,
+          &:focus,
+          &:focus-within,
+          &:active {
+            background-color: #fff !important; // override important inline
+            text-decoration: none;
+          }
+        }
+
+      } // end .gsc-results
+
+      .gsc-webResult.gsc-result {
+        margin-bottom: 2rem;
+        padding: 0;
+      }
+
+      .gs-no-results-result .gs-snippet {
+        border: none;
+      }
+    } // end .gsc-results-wrapper-visible
+  } // end .entry-content .gsc-control-cse
+
+  // Desktop
+  @media screen and (min-width: 1080px) {
+    .gsc-refinementsArea {
+      margin-top: -82px;
+      border-bottom: none;
+
+    }
+    // Wraps search results and facet tabs
+    .gsc-results-wrapper-visible {
+      display: flex;
+
+      // Not used
+      .gsc-positioningWrapper:nth-child(1) {
+        flex: none;
+      }
+
+      // Wraps the facet tabs
+      .gsc-positioningWrapper:nth-child(2) {
+        order: 2;
+
+        // The refinement tabs
+        .gsc-refinementHeader {
+          padding: 2px 0 2px 0;
+          display: block;
+          width: 322px;
+        }
+      }
+
+      // Not used
+      .gsc-positioningWrapper:nth-child(3) {
+        flex: none
+      }
+      // Wraps the search results
+      .gsc-wrapper {
+        order: 1;
+        width: 75%;
+        max-width: 700px;
+        padding-right: 65px;
+        margin-right: 50px;
+      }
+    }
+  } // end @media screen and (min-width: 1080px)
+} //end .page-template-template-search
+
+// Built-in WordPress Search Results template
+body.search {
+  .content-sidebar-wrap .content {
+    .archive-description {
+      margin-bottom: 2.157rem;
+    }
+
+    header.entry-header {
+      margin-bottom: .5rem;
+    }
+
+    h2.entry-title {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    // Space between search results
+    .post, .after-entry, .entry {
+      margin-bottom: 2.25rem;
+    }
+
+    .pagination {
+      margin: 2rem 0;
+    }
+  }
+} // end body.search

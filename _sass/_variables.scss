@@ -1,0 +1,145 @@
+/**
+ * TAMUS custom variables
+ *
+ * @since 2.0.0
+ */
+
+/**
+ * Override Bootstrap defaults.
+ * We could edit bootstrap/_variables.scss but doing so makes it harder to upgrade bootstrap
+ */
+ @import "bootstrap/functions";
+ @import "bootstrap/variables";
+
+
+//$blue: #0057A8; // contrast ratio: 7.17:1 - meets AAA but dark enough that it's hard to distinguish from regular text
+$blue: #005CB3; // contrast ration of 6.6:1, meets AA (4.5:1) see https://webaim.org/resources/contrastchecker/
+$darkblue: #1C3B6A;
+$verydarkblue: #1a202c;
+$lightgrey: #7B7474;
+$light-blue-highlight: #EEF6FF; // background for odd table rows, FAQ content
+$border-gray: #a1a5a8;
+$hilitegreen: #39A641;
+$black: #222;
+$body-color: $black;
+$white: #fff;
+$maroon: #500000;
+$sitered: #AB0004; // Leslie asked for AB0004, it's in the color pallette. I like #AE1F24 better, it's a closer in saturation and tint to the blue used in the nav bar
+$darkred: #820202;
+$servicesgreen: $hilitegreen;
+$servicesgold: #feb100;
+$servicespurple: #502d81;
+$sitepadding: 35;
+$widgetpadding: 30;
+$sitewidth: 1140;
+$headerrightwidth: 250;
+$alertheight: 53;
+$alertnoticesize: 44;
+
+
+/**
+ * Update body background color
+ *
+ * Choosing a neutral color for the body background would make the site feel more clean and professional
+ * and feel like the light blue does not pair well with the maroon in the footer.
+ * I feel like the light blue is pretty prominent for a color that isn't used elsewhere in the System Marcomm's palate.
+ * Aggie Maroon is strong color with a very dark shade. It's difficult to pair with other colors. Typically, in corporate
+ * design, a strong color is paired with a very light neutral like white or a very light gray.
+ * Using a triad on the color wheel, Aggie Maroon works with the blue and green in the header, especially since they are
+ * a similar saturation. Especially since the maroon never borders the other strong colors. I think the light blue of the
+ * background was intended to act as a neutral. While it is a light tint of blue, it's still competing for attention with
+ * the maroon - especially on higher end displays that have more color depth and saturation.
+ *
+ * Original var and color: $siteback: #92BDE9;
+ * Testing different background colors:
+ * Slightly more blue #f0f4f7;
+ * Cool white #f5f7f9
+ */
+$body-background-color: #f0f4f7;
+
+
+// Override Bootstrap 4 variables as needed
+
+// Add additional spacer options. Ex mt-6, py-8
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 4),
+    7: ($spacer * 5),
+    8: ($spacer * 6)
+  ),
+  $spacers
+);
+
+// Our Style Guide font is Open Sans. Adding default sans-serif system fonts for Mac, Windows, IOS and Android
+$font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Roboto, Arial, sans-serif;
+$font-family-monospace:  'Courier New', Courier, 'Courier New', monospace;
+
+
+/**
+ * Chart of rem equivalents.
+ * The base font size is 16px in this theme.
+ *
+ * 10px	= 0.625rem
+ * 12px	= 0.75rem
+ * 14px	= 0.875rem
+ * 16px	= 1rem
+ * 18px	= 1.125rem
+ * 20px	= 1.25rem
+ * 24px	= 1.5rem
+ * 26px	= 1.625rem
+ * 28px	= 1.75rem
+ * 32px	= 2rem
+ * 36px	= 2.25rem
+ * 40px	= 2.5rem
+ * 44px	= 2.75rem
+ * 48px	= 3rem
+ * 50px	= 3.125rem
+ * 56px	= 3.5rem
+ * 64px	= 4rem
+ */
+
+// Set our base font size (sass var and css var)
+$font-size-base: 1rem;
+:root {
+  font-size: $font-size-base;
+}
+
+// 1.33 ratio calculated with https://type-scale.com/
+$h1-font-size:                      2.369rem;
+$h2-font-size:                      1.777rem;
+$h3-font-size:                      1.333rem;
+$h4-font-size:                      1.1rem;
+$h5-font-size:                      1rem;
+$h6-font-size:                      1rem;
+$headings-margin-bottom:            1.5rem;
+$headings-font-family:              inherit;
+$headings-line-height:              1.2;
+$headings-font-weight:              600;
+$headings-color:                    $verydarkblue; // Overriding blue headings - we are using blue for links and blue is a defacto standard for links on the web
+$paragraph-margin-bottom:           1.5rem;
+
+$alert-border-radius:               none;
+$breadcrumb-padding-y:              0;
+$breadcrumb-padding-x:              0;
+$breadcrumb-margin-bottom:          2rem;
+$breadcrumb-bg:                     transparent;
+$print-page-size:                   letter;
+
+// Bootstrap tabs
+$nav-tabs-border-color:             transparent;
+$nav-tabs-border-width:             0;
+$nav-tabs-border-radius:            0;
+$nav-tabs-link-hover-border-color:  transparent transparent $blue;
+$nav-tabs-link-active-color:        $blue;
+$nav-tabs-link-active-bg:           transparent;
+$nav-tabs-link-active-border-color: transparent transparent $blue;
+$mark-bg:                           #fbf7b9;
+
+// Forms
+$input-border-radius:               0;

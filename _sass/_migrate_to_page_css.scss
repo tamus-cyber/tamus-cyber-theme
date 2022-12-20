@@ -1,0 +1,311 @@
+/**
+ * These rules are specific to individual pages or templates.
+ * They should be moved to page and template specific css and taken out of global.
+ * This is a staging area for those rules. Delete once all rules are migrated.
+ *
+ * When migrating: remove all max-width media queries, they are not mobile first.
+ *
+ * @since 2.0.0
+ */
+
+
+// Moved from _mediaqueries.scss
+@media only screen and (max-width: 1600px) {
+  .cybersecurity-menu {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 1220px) {
+  .threatposts {
+    .wrap {
+      padding: 0 $sitepadding * .75px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .page-template-template-about {
+    .vision-strategy-approach {
+      .about-menu {
+        width: 90%;
+
+        li {
+          margin-right: 60px;
+
+          &.active,
+          &:hover,
+          &:focus {
+            background-size: 100px;
+          }
+
+          &.vision,
+          &.strategic-goals,
+          &.approach {
+            margin-top: -50px;
+            width: 100px;
+
+            a {
+              background-size: 80px;
+              height: 100px;
+              width: 100px;
+            }
+          }
+
+          &.approach {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+} // end max-width: 1023px
+
+
+@media only screen and (max-width: 799px) {
+  .page-template-template-contacts {
+    .oit-select,
+    .it-helpdesk-select {
+      margin-left: 0;
+      width: 48%;
+    }
+
+    .oit-select {
+      margin-right: 4%;
+    }
+
+    .it-helpdesk-select {
+      padding: $sitepadding * .5px;
+    }
+
+    .oit-contacts {
+
+      .cio,
+      .executive-team {
+        width: 100%;
+      }
+    }
+
+    .it-helpdesk-contacts {
+      padding: $sitepadding * .5px;
+      width: 100%;
+
+      h3 {
+        font-size: 20px !important;
+      }
+    }
+  }
+} // end max-width: 799px
+
+
+
+
+@media only screen and (max-width: 720px) {
+
+  .page-template-template-services {
+    .service {
+      margin-right: 4%;
+      width: 48%;
+
+      &:nth-child(3n) {
+        margin-right: 4%;
+      }
+
+      &:nth-child(3n + 1) {
+        clear: none;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(2n + 1) {
+        clear: left;
+      }
+    }
+  }
+} // end max-width: 720px
+
+
+@media only screen and (max-width: 639px) {
+  .category-cio-blog {
+    .content {
+      .entry {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .page-template-template-cybersecurity-news {
+    .cyber {
+      width: 100%;
+    }
+
+    .threatposts {
+      li {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .page-template-template-be-cyber-savvy {
+    .be-cyber-savvy-menu {
+      li {
+        margin-right: 3%;
+        width: 48.5%;
+
+        &:nth-child(2) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .page-template-template-contacts {
+    .it-helpdesk-select {
+      h2 {
+        background-size: 50px auto;
+        font-size: 20px;
+        padding-left: 65px;
+      }
+    }
+
+    .oit-contacts {
+      padding: $sitepadding * .5px;
+    }
+
+    .it-helpdesk-contacts {
+      h3 {
+        font-size: 18px !important;
+      }
+    }
+  }
+} // end max-width: 639px
+
+
+@media only screen and (max-width: 560px) {
+  .page-template-template-about {
+    .vision-strategy-approach {
+      .about-menu {
+        width: 90%;
+
+        li {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  .page-template-template-services {
+    .service {
+      float: none;
+      margin-right: 0;
+      width: 100%;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(3n + 1) {
+        clear: none;
+      }
+
+      &:nth-child(2n + 1) {
+        clear: none;
+      }
+    }
+  }
+} // end max-width: 560px
+
+
+@media only screen and (max-width: 539px) {
+  .page-template-template-contacts {
+    .oit-select,
+    .it-helpdesk-select {
+      float: none;
+      height: 150px;
+      margin-right: 0;
+      width: 100%;
+
+      h2 {
+        background-size: 58px auto;
+        font-size: 28px;
+        padding-left: 70px;
+      }
+    }
+
+    .oit-contacts {
+      .executive-team {
+        .container {
+          column-count: 1;
+        }
+      }
+    }
+
+    .it-helpdesk-contacts {
+      .hr-payroll,
+      .finance-procurement,
+      .research {
+        margin-bottom: $sitepadding * 1px;
+        margin-right: 0;
+        width: 100%;
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+} // end max-width: 539px
+
+
+
+@media only screen and (max-width: 464px) {
+  .page-template-template-about {
+    .vision-strategy-approach {
+      margin-top: $sitepadding * 1px;
+      padding-top: $sitepadding * 1px;
+
+      .about-menu {
+        display: none;
+      }
+
+      div {
+        display: block;
+        margin-bottom: $sitepadding * 1px;
+        padding-top: 100px;
+
+        &.vision {
+          background: transparent url('../../images/about-vision.svg') center top no-repeat;
+          background-size: 80px;
+        }
+
+        &.strategic-goals {
+          background: transparent url('../../images/about-strategic.svg') center top no-repeat;
+          background-size: 80px;
+        }
+
+        &.approach {
+          background: transparent url('../../images/about-approach.svg') center top no-repeat;
+          background-size: 80px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .intro {
+      .alignright {
+        margin-left: 20px;
+        width: 48%;
+
+        .wp-caption-text {
+          width: 100%;
+        }
+      }
+    }
+  }
+} // end max-width: 464px

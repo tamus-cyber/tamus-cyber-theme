@@ -1,0 +1,57 @@
+/**
+ * structural styling for:
+ * body, sidebar and inner content area
+ *
+ * @since 2.0.0
+ */
+
+body {
+  background-color: $body-background-color;
+
+  // enables a font’s native kerning instructions, which means that letters will be spaced exactly as the type designer intended
+  text-rendering: optimizeLegibility;
+
+	&.full-width-content {
+		.content {
+			width: 100%;
+		}
+	}
+}
+
+.site-container {
+	position: relative;
+}
+
+.site-inner {
+	background-color: $white;
+  padding: 0 30px 30px 30px;
+  margin-top: 10px;
+
+	@include shadow;
+}
+
+// .content-sidebar is set on the body tag for pages that have a sidebar layout
+.content-sidebar {
+	.content {
+		width: 100%;
+	}
+
+	.sidebar {
+    width: 100%;
+	}
+}
+
+// content-sidebar-wrap wraps the sidebar and main
+.content-sidebar-wrap {
+  display: flex;
+  flex-direction: column; // column on mobile, row on desktop
+
+  // .content is defined earlier in this stylesheet but wanted to put all the flexbox layout rules together
+  .content {
+    order: 0; // put main.content before sidebar
+  }
+
+  #genesis-sidebar-primary {
+    float: none;   // changing from float layout to flex
+  }
+}

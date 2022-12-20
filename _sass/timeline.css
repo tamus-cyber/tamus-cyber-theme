@@ -1,0 +1,176 @@
+/**
+ * Timeline
+ * based on code from https://www.cssscript.com/responsive-animated-timeline-javascript-css3/
+ *
+ * @since 2.0.0
+ */
+/**
+ * TAMUS custom variables
+ *
+ * @since 2.0.0
+ */
+/**
+ * Override Bootstrap defaults.
+ * We could edit bootstrap/_variables.scss but doing so makes it harder to upgrade bootstrap
+ */
+/**
+ * Update body background color
+ *
+ * Choosing a neutral color for the body background would make the site feel more clean and professional
+ * and feel like the light blue does not pair well with the maroon in the footer.
+ * I feel like the light blue is pretty prominent for a color that isn't used elsewhere in the System Marcomm's palate.
+ * Aggie Maroon is strong color with a very dark shade. It's difficult to pair with other colors. Typically, in corporate
+ * design, a strong color is paired with a very light neutral like white or a very light gray.
+ * Using a triad on the color wheel, Aggie Maroon works with the blue and green in the header, especially since they are
+ * a similar saturation. Especially since the maroon never borders the other strong colors. I think the light blue of the
+ * background was intended to act as a neutral. While it is a light tint of blue, it's still competing for attention with
+ * the maroon - especially on higher end displays that have more color depth and saturation.
+ *
+ * Original var and color: $siteback: #92BDE9;
+ * Testing different background colors:
+ * Slightly more blue #f0f4f7;
+ * Cool white #f5f7f9
+ */
+/**
+ * Chart of rem equivalents.
+ * The base font size is 16px in this theme.
+ *
+ * 10px	= 0.625rem
+ * 12px	= 0.75rem
+ * 14px	= 0.875rem
+ * 16px	= 1rem
+ * 18px	= 1.125rem
+ * 20px	= 1.25rem
+ * 24px	= 1.5rem
+ * 26px	= 1.625rem
+ * 28px	= 1.75rem
+ * 32px	= 2rem
+ * 36px	= 2.25rem
+ * 40px	= 2.5rem
+ * 44px	= 2.75rem
+ * 48px	= 3rem
+ * 50px	= 3.125rem
+ * 56px	= 3.5rem
+ * 64px	= 4rem
+ */
+:root {
+  font-size: 1rem;
+}
+
+.content-sidebar-wrap .content .timeline ul {
+  padding: 0;
+  margin-top: -40px;
+}
+.content-sidebar-wrap .content .timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #464953;
+}
+.content-sidebar-wrap .content .timeline ul li:first-child {
+  background: transparent;
+}
+.content-sidebar-wrap .content .timeline ul li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+}
+.content-sidebar-wrap .content .timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 300px;
+  padding: 12px 15px 15px 15px;
+  margin-top: 45px;
+  background: #464953;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
+}
+.content-sidebar-wrap .content .timeline ul li div::before {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.content-sidebar-wrap .content .timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+.content-sidebar-wrap .content .timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #464953 transparent transparent;
+}
+.content-sidebar-wrap .content .timeline ul li:nth-child(even) div {
+  left: -339px;
+}
+.content-sidebar-wrap .content .timeline ul li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #464953;
+}
+.content-sidebar-wrap .content .timeline ul li::after {
+  -webkit-transition: background 0.75s ease-in-out;
+  transition: background 0.75s ease-in-out;
+}
+.content-sidebar-wrap .content .timeline ul li.in-view::after {
+  background: #39A641;
+}
+.content-sidebar-wrap .content .timeline ul li:nth-child(odd) div {
+  -webkit-transform: translate3d(30px, 0, 0);
+          transform: translate3d(30px, 0, 0);
+}
+.content-sidebar-wrap .content .timeline ul li:nth-child(even) div {
+  -webkit-transform: translate3d(-30px, 0, 0);
+          transform: translate3d(-30px, 0, 0);
+}
+.content-sidebar-wrap .content .timeline ul li.in-view div {
+  -webkit-transform: none;
+          transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+.content-sidebar-wrap .content .timeline time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  .content-sidebar-wrap .content .timeline ul li div {
+    width: 250px;
+  }
+  .content-sidebar-wrap .content .timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+@media screen and (max-width: 600px) {
+  .content-sidebar-wrap .content .timeline ul li {
+    margin-left: 20px;
+  }
+  .content-sidebar-wrap .content .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  .content-sidebar-wrap .content .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .content-sidebar-wrap .content .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #39A641 transparent transparent;
+  }
+}/*# sourceMappingURL=timeline.css.map */

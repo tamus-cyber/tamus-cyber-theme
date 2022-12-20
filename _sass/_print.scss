@@ -1,0 +1,90 @@
+/**
+ * Print style sheet
+ * Bootstrap provides a lot of print utilities as well: https://getbootstrap.com/docs/4.5/getting-started/browsers-devices/#printing
+ *
+ * @since 2.0.0
+ */
+
+@media print {
+  // page elements we always want to hide from print
+  footer.site-footer { display: none !important; }
+
+  // Overriding _genesis.scss to make text black
+  *,
+	*::before,
+	*::after {
+		color: #000 !important;
+  }
+
+  p, li {
+    font-size: 12pt;
+  }
+
+  // Browser support for @page is still mixed as of Oct 2020
+	@page {
+    margin: 1in;
+  }
+
+  .site-header {
+    padding: 0 0 20px 0;
+
+    .wrap {
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+
+      #oit-site-sub-menu {
+        display: none !important; // override inline style
+      }
+
+      .title-area {
+        margin: auto;
+        padding: 0;
+        text-align: left;
+        float: none;
+        width: auto;
+
+        .site-title a {
+          text-decoration: none;
+        }
+      }
+
+      // logo in header
+      .header-widget-area {
+        display: inline-block !important;
+        float: none;
+        margin-left: 0;
+
+        a[href]::after {
+          content: "";
+        }
+      }
+    }
+  } // end site-header
+
+
+
+  // Hide the print button
+  .print-button {
+    display: none;
+
+    a[href]::after {
+      content: "";
+    }
+  }
+
+  // Hide alerts
+  .active-alert #header-alert {
+    display: none;
+  }
+
+  .site-inner {
+    margin-top: 0;
+    padding: 0;
+
+    main.content {
+      padding-top: 0;
+    }
+  }
+} // end @media print
+

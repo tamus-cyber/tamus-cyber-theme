@@ -1,0 +1,170 @@
+/**
+ * Alerts
+ * Banner can be displayed in the header of every page.
+ * Plus styling for alert custom post type.
+ *
+ * @since 2.0.0
+ */
+
+// Added .active-alert to the body tag so we can style other elements when there's an alert.
+.active-alert {
+
+  // Change header bottom border to red. Default is green, change it so we don't have a Christmas theme when alerts are active.
+  .site-header {
+    border-bottom: 1px solid #E30008;
+  }
+
+  #header-alert {
+    border: none;
+    border-bottom: 2px solid #E30008;
+    background-color: $sitered;
+    color: #fff;
+    min-height: $alertheight * 1px;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 1000;
+    top: auto;
+
+    .wrap {
+      margin: 0 auto;
+      width: 100%;
+      max-width: $sitewidth * 1px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      color: $white;
+      display: block;
+      min-height: $alertheight * 1px;
+      line-height: 1;
+      text-decoration: none;
+      padding: 0;
+      text-align: center;
+
+      .close {
+        position: static;
+      }
+
+      .alert-icon, .notice, button.close {
+        transition-timing-function: ease-in-out;
+        transition: background-color .2s, text-decoration .2s, outline .2s;
+      }
+
+      // Make it more obvious that this is a link, especially for keyboard navigation
+      &:hover, &:focus, &:focus-within, &:active {
+        .notice {
+          text-decoration: underline;
+        }
+      }
+
+      .notice {
+        width: 100%;
+        align-self: center;
+        line-height: 1.5;
+      }
+
+      // Higher specificity on the close button to override default button styles
+      button.close {
+        background-color: transparent;
+        font-size: 1.3rem;
+        padding: 5px 15px;
+        margin-right: 3px;
+        border-radius: 0;
+        color: #fff;
+
+        &:hover, &:focus, &:focus-within, &:active {
+          cursor: pointer;
+          outline-offset: 0;
+          background-color: darken($darkred, 5%);
+        }
+
+        &:hover {
+          outline: 1px dotted #fff;
+        }
+
+        &:focus, &:focus-within, &:active {
+          outline: 1px solid #fff;
+        }
+      }
+    }
+  }
+}
+
+
+// .content targets the main content area, excluding the sidebar nav. Adding .content-sidebar-wrap to increase specificity to override other style sheets
+.content-sidebar-wrap .content {
+
+  /* Styling for alert post type */
+  .post .alert-status-and-time {
+    font-size: .9rem;
+    font-style: italic;
+    padding-left: 10px;
+    margin: .75rem 0;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .post.active-alert {
+    .alert-status-and-time {
+      border-left: 4px solid #E30008;
+      /* background-color: #ffdddd; */
+    }
+
+    .alert-status-message strong {
+      color: #E30008;
+    }
+  }
+
+  .post.resolved-alert {
+    .alert-status-and-time {
+      border-left: 4px solid $hilitegreen;
+      /* background-color: #e1f1e2; */
+    }
+  }
+
+  .alert-update {
+    margin-bottom: 0.5rem
+
+    h3 {
+      line-height: 1;
+    }
+
+    .alert-update-time {
+      font-size: .9rem;
+      font-style: italic;
+    }
+
+    .alert-update-content {
+      padding-top: 12px;
+    }
+  }
+} // end .content-sidebar-wrap .content
+
+// Style the standard Bootstrap alert
+.alert-danger {
+  color: $darkred;
+
+  a {
+    color: $darkred;
+
+    &:hover,
+    &:focus {
+      text-decoration-thickness: 2px;
+    }
+
+    &:focus {
+      outline: 1px solid $darkred;
+      outline-offset: 1px;
+    }
+
+  }
+}

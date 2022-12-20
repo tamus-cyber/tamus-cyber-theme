@@ -1,0 +1,153 @@
+/**
+ * TAMUS SCSS mixins
+ *
+ * @since 2.0.0
+ */
+
+
+@mixin anchor-links {
+  color: $blue;
+
+  // underline body text - improved link UX and accessibility
+  text-decoration: underline solid $blue 1px;
+
+  // I noticed that border-bottom was being used instead of text-decoration in most places but the original hover effect was only overridden for anchors within a paragraph.
+  // There also wasn't a visible indication that a link was in hover, focus, etc state
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:focus-within,
+  &:active {
+    text-decoration-thickness: 2px;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: $blue solid 1px;
+    outline-offset: 1px;
+  }
+}
+
+/**
+ * Call to action buttons (CTA)
+ * Changing button color to make it more identifiable as a call to action link
+ * Previous color was gray which can indicate a button is disabled.
+ *
+ * For consistent use of the button, we've defined two default buttons.
+ * Maroon with white text
+ * White with maroon text and a maroon border
+ */
+@mixin cta-button($bg_color, $border_color, $text_color) {
+  border-radius: 4px;
+  background-color: $bg_color;
+  border: 2px solid $border_color;
+  color: $text_color;
+  padding: 7px 15px;
+  font-weight: normal;
+  text-decoration: none;
+
+  // For accessibility: moving text from px to REMS
+  font-size: 1rem;
+
+  // make line height consistent between an anchor with class="button" and a <button> element
+  line-height: 1.5;
+
+  // On hover, etc - reverse bg and text colors
+  &:hover, &:focus, &:focus-within, &:focus-visible, &:active {
+    // For accessibility: don't rely on color alone to indicate link state change
+    color: $bg_color;
+    background-color: $text_color;
+    outline: none;
+  }
+
+  transition: all 0.3s ease-in-out;
+}
+
+/**
+ * Maroon with white text
+ * To use: @extend %maroon-cta-button;
+ */
+%maroon-cta-button {
+  @include cta-button($maroon, $maroon, #fff)
+}
+
+/**
+ * White with maroon text and a maroon border
+ * To use: @extend %white-cta-button;
+ */
+%white-cta-button {
+  @include cta-button(#fff, $maroon, $maroon);
+}
+
+
+/**
+ * Pagination link hover, focus, active.
+ */
+@mixin pagination-link-active {
+  background-color: $maroon;
+	border: solid 1px $maroon;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: underline #fff solid 1px;
+}
+
+/**
+ * Pagination link for the current page.
+ */
+ @mixin pagination-link-current {
+  color: $maroon;
+	border: solid 1px $maroon;
+  text-decoration: underline #fff solid 1px;
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    @include pagination-link-active;
+  }
+}
+
+/**
+ * Pagination links on archive pages, calendar, etc.
+ */
+@mixin pagination-link {
+  background-color: transparent;
+	border: solid 1px #fff; // hidden border to align with current and active states
+	color: $blue;
+	padding: 0.33rem 0.4rem 0.4rem 0.4rem;
+	display: inline-block;
+	width: 2.2rem;
+	height: 2.2rem;
+	text-align: center;
+
+	&:hover,
+	&:focus,
+	&:active {
+		@include pagination-link-active;
+	}
+}
+
+
+/**
+ * Deprecated
+ * Use Bootstrap visibility classes instead.
+ * https://getbootstrap.com/docs/4.1/utilities/screenreaders/
+ * https://getbootstrap.com/docs/4.1/utilities/visibility/
+ *
+ * Options depending on use: .sr-only, .visible, .invisible
+ */
+@mixin hidetext {
+  clip: rect(0 0 0 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin shadow {
+  box-shadow: 0px 3px 6px #00000029;
+}

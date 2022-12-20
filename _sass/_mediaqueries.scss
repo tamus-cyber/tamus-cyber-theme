@@ -1,0 +1,291 @@
+/**
+ * Media queries for overriding the mobile view.
+ *
+ * @TODO
+ * - Remove all max-width media queries, they are not mobile first.
+ *
+ * Start of SCSS for desktop begins at:
+ * @media only screen and (min-width: 959px)
+ *
+ * For consistency, try to stick to Bootstrap's breakpoints:
+ * X-Small 	None 	<576px
+ * Small 	sm 	≥576px
+ * Medium 	md 	≥768px
+ * Large 	lg 	≥992px
+ * Extra large 	xl 	≥1200px
+ * Extra extra large 	xxl 	≥1400px
+ *
+ * @since 1.0.0
+ */
+
+@media only screen and (max-width: 630px) {
+  .header-widget-area {
+    float: left !important;
+    width: auto !important;
+
+    img {
+      margin-left: 0px !important;
+    }
+  }
+} // end max-width: 630px
+
+
+@media only screen and (max-width: 560px) {
+  .site-footer {
+    .tamus-logo {
+      float: none;
+      margin: $sitepadding * 1px auto 0;
+    }
+  }
+} // end max-width: 560px
+
+
+/*****************************************************************************
+ * Start of SCSS for desktop - 992px is the Bootstrap breakpoint for Desktop
+ *****************************************************************************/
+
+@media only screen and (min-width: 992px) {
+  // Three links beneath logo: Services, Contact, Search
+  .header-widget-area {
+		#oit-site-sub-menu {
+			display: flex;
+			justify-content: space-between;
+      width: 100%;
+      margin-bottom: 0;
+
+			li {
+				display: block;
+
+				&.oithome {
+					display: none;
+					margin-left: calc(-3rem - 15px);
+				}
+			}
+
+			a {
+				color: $maroon;
+				display: inline-block;
+				line-height: 1;
+        margin: 0;
+        padding: 2px 0 3px 0;
+        text-decoration: none;
+        font-size: 1rem;
+
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: underline;
+          outline-offset: 3px;
+        }
+
+        &:hover {
+          outline: 1px dotted;
+        }
+        &:focus {
+          outline: 1px solid;
+        }
+
+			}
+		} // end #oit-site-sub-menu
+  } // end .header-widget-area
+
+  // Header global nav
+  #genesis-nav-primary {
+    margin: 0 -50vw;
+    padding: 7px 50vw;
+    position: relative;
+    z-index: -1;
+
+    .genesis-nav-menu {
+      display: flex;
+
+      &>.menu-item:first-child {
+        // align first link in top-nav with the site name in the header
+        margin-left: -14px;
+      }
+
+      .menu-item {
+        display: block;
+
+        a {
+          &:active,
+          &:hover,
+          &:focus {
+            box-shadow: 0 -4px 0 0 #fff;
+          }
+        }
+      }
+
+      .sub-menu {
+        background-color: $darkblue;
+        width: auto;
+        min-width: 343px;
+        position: absolute;
+        display: block;
+
+        li {
+          margin-left: 6px;
+        }
+
+        a {
+          min-width: 335px;
+
+          &:active,
+          &:hover,
+          &:focus {
+            box-shadow: -4px 0 0 0 #fff;
+          }
+        }
+      } // end .sub-menu
+
+      .sub-menu-toggle {
+        visibility: hidden;
+        display: none;
+      }
+
+      .search-form-wrapper {
+        margin-left: auto;
+        align-self: flex-end;
+        top: -8px;
+
+        .search-form {
+          width: 228px;
+          margin: 0;
+        }
+
+        .search-field {
+          width: 100%;
+        }
+      }
+
+    } // end .genesis-nav-menu
+  } // end #genesis-nav-primary
+
+
+  .site-inner {
+    margin-top: 40px;
+    padding: 10px 35px 50px 35px
+  }
+
+  // content-sidebar-wrap wraps the sidebar and main
+  .content-sidebar-wrap {
+    flex-direction: row;
+
+    .content {
+      width: calc(73% - #{$sitepadding*1px});
+    }
+
+    // First right sidebar - display to the right on desktop
+    #genesis-sidebar-primary {
+      order: 1; // move sidebar to the right
+      margin-top: 78px; // Align first widget with the top of the page title
+    }
+
+    .sidebar {
+      width: calc(27% + #{$sitepadding*1px});
+      padding-right: 2px;
+      position: relative;
+      right: -35px;
+    }
+  }
+
+  .menu-primary {
+    .menu-item {
+      &.search {
+        margin-bottom: $sitepadding * .5px;
+        margin-left: $sitepadding * .25px;
+      }
+    }
+  }
+
+  .site-header {
+    .wrap {
+      .tamus-wrap-title-and-logo {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 10px;
+        height: 101px; // prevent resize flash when services, contact, about are pulled in with js
+
+        .title-area {
+          min-width: 30%;
+          width: calc(100% - (($sitepadding + $headerrightwidth) * 1px));
+          padding-top: 60px;
+        }
+
+        #tamus-oit-logo {
+          margin-top: 18px;
+          margin-bottom: 9px;
+        }
+      }
+    } // end .wrap
+
+    // Hide logo and decrease header size after the user has scrolled down the page
+    &.scrolled {
+      .wrap {
+        .tamus-wrap-title-and-logo {
+          height: auto;
+
+          .title-area {
+            padding-top: 15px;
+          }
+
+          .header-design-element,
+          #tamus-oit-logo {
+            display: none;
+          }
+
+          #oit-site-sub-menu {
+            margin-top: 30px;
+          }
+        } // end .tamus-wrap-title-and-logo
+      } // end .wrap
+
+      .widget_nav_menu {
+        margin-top: 26px;
+
+        .menu-item {
+          &.oithome {
+            display: list-item;
+          }
+        }
+      }
+    } // end .scrolled
+  } // end .site-header
+
+
+  // Bootstrap adds a 12px padding on columns. Remove that on the first and last column in each row.
+  .row > div:first-child {
+    margin-left: -15px;
+  }
+
+  .row > div:last-child {
+    margin-right: -15px;
+  }
+
+  // Don't remove the padding for first and last cards
+  .row > div.card:first-child {
+    margin-left: 0;
+  }
+
+  .row > div.card:last-child {
+    margin-right: 0;
+  }
+
+  .site-footer {
+    .wrap {
+      flex-direction: row;
+      text-align: left;
+
+      .footer-links {
+        width: calc(73% - #{$sitepadding*1px});
+      }
+
+      .tamus-logo {
+        width: calc(27% + #{$sitepadding*1px});
+        max-width: 138px;
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+} // end min-width: 992px

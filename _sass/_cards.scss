@@ -1,0 +1,92 @@
+/**
+ * Card styling
+ * Bootstrap cards are used standalone, in tabs, accordion, etc.
+ *
+ * @since 2.0.0
+ */
+
+
+.card {
+  border-radius: 0;
+
+  // Remove top margin for headings used as the first entry in a card
+  .card-body {
+    .card-title,
+    &+h2,
+    &+h3,
+    &+h4,
+    &+h5,
+    &+h6 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// cards used on homepages
+.cards {
+  h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  /**
+  * Color top border of cards
+  * Copied style from _services.scss but made for generic use for Gutenberg columns
+  * Requires user to add 'cards' class to columns container in the editor.
+  * Tried :nth-child() and :nth-of-type() but discovered that only works on siblings, cards can be in different .row parent divs
+  * As of Oct 2022, only Safari supports nth-child(An+B of selector) , nth-last-child(An+B of selector) pseudo classes
+  */
+  .wp-block-column, .card {
+    border-top: 4px solid $servicesgreen;
+    margin-bottom: $sitepadding * 1px;
+    padding: $sitepadding * .5px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+
+    &.card-0, &.card-6 {
+      border-top-color: $servicesgreen;
+    }
+
+    &.card-1, &.card-7 {
+      border-top-color: $servicesgold;
+    }
+
+    &.card-2, &.card-8 {
+      border-top-color: $servicespurple;
+    }
+
+    &.card-3, &.card-9 {
+      border-top-color: $sitered;
+    }
+
+    &.card-4, &.card-10 {
+      border-top-color: $blue;
+    }
+
+    &.card-5, &.card-11 {
+      border-top-color: $maroon;
+    }
+
+    // Don't add the column styles to nested columns
+    .wp-block-column {
+      border-top: none;
+      box-shadow: none;
+      margin-bottom: none;
+      padding: 10px 0 0 0;
+    }
+  } // end .wp-block-column
+
+
+  @media only screen and (min-width: 992px) {
+    .wp-block-column, .card {
+      &:not(:first-child) {
+        margin-left: 2em;
+      }
+    }
+  }
+
+} // end .cards

@@ -1,0 +1,123 @@
+/**
+ * These are global styles for all tablepress tables on the oitsubsites theme.
+ * For styles specific to a table, please check the tablepress UI in the wordpress backend of the site the table is on.
+ *
+ * @since 1.0.0
+ */
+
+
+ /**
+  * .content targets the main content area, excluding the sidebar nav.
+  * Adding .content-sidebar-wrap to increase specificity to override other style sheets
+  */
+.content-sidebar-wrap .content {
+  .dataTables_filter input {
+    background-color: #fff;
+    border-bottom: 2px solid #500000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: $black;
+    padding: 4px;
+    width: auto;
+  }
+
+  .dataTables_filter {
+    margin-bottom: 24px;
+  }
+
+  .tablepress {
+    table {border-collapse:collapse;}
+
+    tbody {
+      border-bottom: none;
+    }
+
+    td {
+      border-top: none;
+      color: $black;
+    }
+
+    td,
+    th {
+      -ms-word-break: normal;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      word-break: normal; /* Non standard for WebKit */
+      hyphens: auto;
+      padding: 8px;
+      font-size: 1rem;
+    }
+
+    tfoot th,
+    thead th {
+      vertical-align: middle;
+      font-size: 1rem;
+      font-weight: 600;
+      font-style: normal;
+      color: $black;
+      border-bottom: 1px solid $darkblue;
+    }
+
+
+    thead {
+      // If it's sortable, the th functions as a link
+      .sorting {
+        color: $blue;
+        text-decoration: underline dotted $blue 1px;
+
+        &:hover, &:focus, &:active {
+          text-decoration-style: solid;
+        }
+
+        &:focus {
+          outline: 1px solid $blue;
+        }
+      } // end .sorting
+
+      // selected for sorting
+      .sorting_asc,
+      .sorting_desc {
+        font-weight: 700;
+        text-decoration-style: solid;
+      }
+
+      // sorting up and down indicator
+      .sorting, .sorting_asc, .sorting_desc {
+        &::after {
+          position: relative;
+          right: -3px;
+        }
+      }
+    } // end thead th
+
+
+    // Zebra striping and hover for tablepress tables
+    .odd td,
+    .odd td:hover {
+      background-color: $body-background-color;
+    }
+
+    .even td,
+    .even td:hover {
+      background-color: #fff;
+    }
+  } // end .tablepress
+
+  .paging_simple {
+    .paginate_button.next::after, .paginate_button.previous::before {
+      font-size: 1rem;
+      color: $blue;
+      text-shadow: none;
+    }
+
+    .disabled.paginate_button.next::after, .paginate_button.previous::before {
+      color: #555
+    }
+  }
+
+  .paginate_button.disabled {
+    color: #555 !important; // important to override important in /plugins/tablepress/css/default.min.css
+    text-decoration: none;
+  }
+} // end .content-sidebar-wrap .content

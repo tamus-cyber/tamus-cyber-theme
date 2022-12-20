@@ -1,0 +1,483 @@
+/**
+ * Style the content area - everything beneath the header and above the footer
+ *
+ * @since 1.0.0
+ */
+
+
+.hide {
+  // .hide was already in use before we merged the code, referencing bootstrap's sr-only
+  @include sr-only();
+}
+
+// For showing a sr-only child element when the parent is focused
+.sr-only-focusable-inside:active, .sr-only-focusable-inside:focus, .sr-only-focusable-inside:focus-within {
+  .sr-only {
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+// Screen reader / keyboard navigation skip links
+.genesis-skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  min-width: 400px;
+
+  a.screen-reader-shortcut {
+    color: $blue;
+
+    &:hover, &:focus, &:focus-within, &:focus-visible, &:active {
+      color: $blue;
+      text-decoration: underline;
+      outline: $blue solid 2px;
+      box-shadow: none;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $blue;
+    }
+  }
+}
+
+/*
+ Bootstrap adds a 12px padding on columns. Remove that on the first and last column in each row.
+ Additional adjustments made for desktop in _mediaqueries.scss
+ */
+.row > div {
+  margin-left: -12px;
+}
+
+.row > div.card {
+  margin-left: 0;
+}
+
+
+/**
+ * .content targets the main content area, excluding the sidebar nav.
+ * Adding .site-inner and main to increase specificity to override other style sheets
+ */
+.site-inner main.content {
+  padding-top: $sitepadding * 1.25px;
+
+	a {
+		&.more {
+			background-color: $maroon;
+			color: $white !important;
+			font-size: 18px;
+			font-style: italic;
+			padding: 5px 10px;
+		}
+  }
+
+  // Form elements
+  fieldset {
+    padding: 0;
+  }
+
+  label {
+    margin-bottom: 0;
+  }
+
+  input, select, option, textarea {
+    padding: 5px 4px;
+    background-color: #fff;
+    border: 1px solid $border-gray;
+
+    &:hover, &:focus, &:focus-within, &:active {
+      outline: 1px solid $blue;
+      outline-offset: 2px;
+    }
+  }
+
+  input, select, option {
+    margin: 6px 2px 1rem 3px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input[type="text"], textarea {
+    width: 100%;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    margin-right: 5px;
+    margin-bottom: 2px;
+  }
+
+  button, input[type="button"], input[type="submit"], input[type="reset"], .wp-block-button__link {
+    margin: 6px 2px 2px 3px;
+  }
+
+  input[type="color"] {
+    width: auto;
+    min-width: 80px;
+    padding: 0;
+    border: none;
+  }
+
+  input[type="file"] {
+    border: none;
+  }
+
+  input, button, .wp-block-button__link {
+    // Outline on label
+    &:focus ~ label,
+    &:hover ~ label {
+      text-decoration: underline $blue solid 1px;
+    }
+  }
+
+  select {
+    width: auto;
+  }
+
+  // Extra specific to override defaults from Gravity Forms
+  .gform_wrapper {
+    form {
+      .gform_body {
+        input {
+          margin: 6px 2px 2px 3px;
+        }
+      }
+    }
+  } // end .gform_wrapper
+
+
+  // CTA - Call to action buttons
+  button,
+  .button,
+  .btn,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  input[type="image"],
+  div.wpforms-container-full .wpforms-form input[type="submit"],
+  div.wpforms-container-full .wpforms-form button[type="submit"],
+  .wp-block-button .wp-block-button__link,
+  .wp-block-button.is-style-outline .wp-block-button__link {
+    @extend %maroon-cta-button;
+  }
+
+  // disabled status, moved from _genesis.scss
+  button:disabled,
+  button:disabled:hover,
+  input:disabled,
+  input:disabled:hover,
+  input[type="button"]:disabled,
+  input[type="button"]:disabled:hover,
+  input[type="reset"]:disabled,
+  input[type="reset"]:disabled:hover,
+  input[type="submit"]:disabled,
+  input[type="submit"]:disabled:hover,
+  input[type="image"]:disabled,
+  input[type="image"]:disabled:hover  {
+    background-color: #eee;
+    border-width: 0;
+    color: #444;
+    cursor: not-allowed;
+  }
+
+  input:disabled {
+    outline: 1px solid #444;
+  }
+
+  caption {
+    color: $black;
+
+    // Use Bootstrap's accessibility classes to make the caption visible to screen readers and people using keyboard navigation
+    @include sr-only();
+    @include sr-only-focusable();
+  }
+
+  th, .tablepress tfoot th, .tablepress thead th {
+    background-color: transparent;
+  }
+
+  // Print button added on documentation post types in functions-front-end.php
+  // and in single-job_aid.php
+  .print-button {
+    a {
+      @extend %white-cta-button;
+      display: inline-block;
+      margin-bottom: 20px;
+
+      svg {
+        fill: $maroon;
+        height: 22px;
+        width: 22px;
+      }
+
+      &:hover, &:focus {
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+
+  // Haven't figured out why but style.min.css has an 8px right and bottom margin on all buttons, undoing that
+  .wp-block-buttons .wp-block-button {
+    margin: 0;
+  }
+
+  hr.wp-block-separator {
+    border-top: 1px solid #dbdbdb;
+  }
+  .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+    max-width: 100%;
+  }
+
+  .breadcrumb {
+    // Make breadcrumbs look the same after Bootstrap integration
+    span[aria-label="breadcrumb separator"] {
+      padding: 0 5px;
+    }
+  }
+
+  .post {
+    margin-bottom: 3.5rem;
+  }
+
+  /**
+   * Search form within page content, in use on the 404 page and search page.
+   * Added higher specificity to override other style sheets.
+   * This doesn't get applied to the header search bar because that comes before .content
+   */
+  form.search-form {
+    background-color: transparent;
+    float: none;
+    overflow: visible;
+    width: 100%;
+    margin-bottom: 0;
+
+    // Make in-page search form placeholder text visible on hover and on focus and make font the same size as the nav
+    .search-form {
+      .search-form-input,
+      .search-field {
+        font-size: 0.875rem; // 14px
+        padding: 10px 7px;
+
+        &:hover, &:focus, &:focus-within, &:active {
+          &::placeholder {
+            color: #fff;
+          }
+        }
+      }
+
+      // Search icon -override blue bg on button
+      input[type="submit"] {
+        background-color: transparent;
+
+        &:hover, &:focus, &:active {
+          outline-color: #fff;
+        }
+      }
+
+      // Highlight search result text
+      .search-excerpt {
+        font-weight: 600;
+        background-color: rgba(255, 227, 0, 0.3);
+      }
+    }
+
+    .search-form-input {
+      background-color: transparent;
+      color: $black;
+      float: none;
+      margin: 0;
+      padding: 10px 7px;
+      width: calc(100% - 108px);
+      display: block;
+      overflow: show;
+    }
+
+    input[type="submit"] {
+      background: $maroon url("../../images/search-glass-white.svg") calc(100% - 10px) 12px no-repeat;
+      background-size: 16px;
+      border: 2px solid $maroon;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin:0;
+      padding: 8px 34px 10px 12px;
+      transition: none;
+
+      &:hover, &:focus {
+        background: #fff url("../../images/search-glass-maroon.svg") calc(100% - 10px) 12px no-repeat;
+        background-size: 16px;
+        color: $maroon;
+      }
+    }
+  } // end .search-form
+
+  // Gravity forms
+  .gform_wrapper {
+    .gsection {
+      border-bottom-color: #dee2e6;
+    }
+
+    label.gfield_label, legend.gfield_label {
+      font-weight: normal;
+    }
+
+    .gsection .gfield_label, h2.gsection_title, h3.gform_title {
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: $h2-font-size;
+      margin-top: $font-size-base * 3.157 !important; // important to override important in formsmain.min.css
+    }
+
+    h3 {
+      font-size: $h3-font-size;
+      margin-top: $font-size-base * 2.369 !important; // important to override important in formsmain.min.css
+    }
+
+    .description, .gfield_description, .gsection_description, .instruction,
+    .field_sublabel_above .ginput_complex.ginput_container label,
+    .field_sublabel_above div[class*="gfield_date_"].ginput_container label,
+    .field_sublabel_above div[class*="gfield_time_"].ginput_container label,
+    .field_sublabel_below .ginput_complex.ginput_container label,
+    .field_sublabel_below div[class*="gfield_date_"].ginput_container label,
+    .field_sublabel_below div[class*="gfield_time_"].ginput_container label {
+      font-size: 1rem;
+      letter-spacing: inherit;
+    }
+  }
+
+
+  // Glossary template
+  #glossary-list {
+    margin: 2rem 0;
+
+    // links to the anchors for each letter in the glossary
+    .in-page-links {
+      display: inline-block;
+      border-top: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+      border-left: 1px solid #dedede;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+
+      a {
+        border-right: 1px solid #dedede;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: none;
+        width: 2rem;
+        padding: 3px;
+        text-align: center;
+
+        &:active,
+        &:hover,
+        &:focus {
+          // using box-shadow instead of border-bottom because it doesn't affect layout
+          box-shadow: inset 0 -1px 0 0 #500000; // bottom
+        }
+      }
+    }
+
+    h2 {
+      display: block;
+      margin: 3rem .5rem .5rem 0;
+      padding: 5px 0;
+      border-top: .5px dotted;
+
+      &:first-of-type {
+        border-top: none;
+        margin-top: 2rem;
+      }
+    }
+
+    .letter {
+      border-bottom: none;
+    }
+
+    .glossary-item {
+      padding: 0 10px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  // Glossary template, using genesis-content to increase specificity
+  #genesis-content #glossary-list {
+    .hidden {
+      display:none;
+    }
+
+    .dashicons-before::before {
+      margin-top: 2px;
+      margin-right: 7px;
+    }
+
+    h3 {
+      font-size: $h3-font-size;
+    }
+  }
+
+  // For TAMUS custom post list block in the documentation plugin
+  .tamus-post-list {
+    .post {
+      .published-date {
+        font-size: .75rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+
+  // Override styles added by Gutenberg
+  .wp-block-latest-posts__post-date {
+    color: $black;
+  }
+
+  // EZ table of contents plugin
+  #ez-toc-container {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  // WordPress Query block
+  .wp-block-query {
+    // Query block outputs posts in an unordered list, need to remove default ul styling.
+    .wp-block-post-template {
+      padding-left: 0;
+
+      li.wp-block-post {
+        padding-left: 0;
+        list-style-type: none;
+      }
+    }
+  }
+
+  // Date on blog posts
+  .post-date {
+    margin-bottom: .25rem;
+  }
+
+} // end .site-inner main.content
+
+
+// Archive pages list multiple posts. Adjusting h2 spacing.
+.archive .site-inner main.content {
+  article {
+    margin-bottom: 0;
+
+    h2.entry-title {
+      margin-top: 2rem;
+    }
+  }
+}

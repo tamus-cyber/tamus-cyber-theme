@@ -1,0 +1,222 @@
+/**
+ * Base Typography
+ * Set base font sizes, colors, line height for html elements
+ *
+ * Overrides for specific components should go in partials for those elements.
+ * There are a few classes just to increase specificity enough to override Genesis.
+ *
+ * @since 2.0.0
+ */
+
+body {
+	font-family: $font-family-sans-serif;
+  font-weight: 400;
+
+  // Browser default is 16px for all browsers. Setting to a set px size on the body tag prevents user selection of font size.
+  font-size: 100%; // 100% for older browsers
+  font-size: $font-size-base; // 1rem set in _variables.scss
+}
+
+
+/**
+ * .content targets the main content area, excluding the sidebar nav.
+ * Adding .content-sidebar-wrap to increase specificity to override other style sheets
+ */
+.content-sidebar-wrap .content {
+  line-height: 1.5;
+
+  /**
+   * Typography change
+   * Improve readability by making sure lines of text are never too long.
+   * In most cases, the ideal measure or line length is 45-75 characters which is about
+   * 650px wide with open-sans at 16px. Rounding up to 675px
+   */
+  p, li {
+    max-width: 675px;    // Fallback for older browsers
+    max-width: 42.1875rem; // 675 / 16 - REMs are preferable b/c they will scale if the user increases the base font size in their browser
+  }
+
+  p, ol, ul {
+    margin-bottom: $paragraph-margin-bottom;
+  }
+
+  ul { padding-left: 16px; }
+
+  li {
+    list-style-position: outside;
+    margin: 0 0 10px 0;
+    padding-left: 4px;
+
+    ul, ol {
+      margin-top: 10px;
+      margin-bottom: 10px
+    }
+  }
+
+  ul > li {
+    list-style-type: disc;
+  }
+
+  ol ul > li,
+  ul ul > li {
+    list-style-type: circle;
+  }
+
+  ol ul ul > li,
+  ul ul ul > li {
+    list-style-type: square;
+  }
+
+  ol ul ul ul > li,
+  ul ul ul ul > li {
+    list-style-type: none;
+  }
+
+  // Add a smaller bullet to deeply nested list items
+  ul ul ul ul > li::before {
+    content: '\2022'; //  \2022 is unicode for a bullet
+    padding-right: 10px;
+    margin-left: -15px;
+  }
+
+
+  // Nested ordered lists
+  /* Commenting out - was causing bugs in different settings. Hope to revisit someday.
+  ol > li {
+    list-style-type: decimal;
+  }
+
+  ol li ol > li {
+    list-style-type: upper-alpha;
+  }
+
+  ol li ol li ol > li {
+    list-style-type: lower-alpha;
+  }
+
+  ol li ol li ol li ol > li {
+    list-style-type: upper-roman;
+  }
+
+  ol li ol li ol li ol li ol > li {
+    list-style-type: lower-roman;
+  }
+
+  ol { counter-reset: item }
+
+  ol li:before { content: counters(item, ".") ". "; counter-increment: item }
+  */
+
+  /**
+   * Typography change
+   * I propose moving to a uniform font-weight and using a standard ratio to define heading sizes and spacing to create a uniform
+   * visual hierarchy. I think it's easier to communicate the semantic structure of each page this way.
+   */
+
+  // heading defaults
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  .entry-title,
+  .entry-header .entry-title  {
+    // Heading variables set in _variables.scss
+    margin-bottom: $headings-margin-bottom;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+    text-transform: none; // All uppercase text can be less accessible in some circumstances.
+
+    // Improve accessibility for linked headings
+    a {
+      text-decoration: underline solid $blue 1px;
+
+      &:hover, &:focus, &:focus-within, &:active {
+        text-decoration-thickness: 2px;
+      }
+    }
+  }
+
+  // Page or post header
+  header.entry-header {
+    margin-bottom: 1.5rem;
+  }
+
+  /**
+   * Design change
+   * I like the look of the green bar beside the headings but since I'm using green and red with alerts in the theme to
+   * communicate status, I would argue that this decorative element could be confusing in this context because it doesn't
+   * communicate anything.
+   */
+   .entry-content {
+    h1 {
+      border-left: none
+    }
+  }
+
+  .entry-title {
+    margin-bottom: 0;
+  }
+
+  // Page title h1 - vars set in bootstrap/_variables.scss
+  h1, h1.entry-title {
+    font-size: $h1-font-size;
+  }
+
+  /**
+   * Top margin is using the same 1.333 ratio but two steps above the font size
+   * For h5 & h6, I didn't want to go any smaller than 1.333rem on the top margin so kept them the same
+   * Calculated with https://type-scale.com/
+   */
+  h2, h2.entry-title {
+    font-size: $h2-font-size;
+    margin-top: 3.157rem;
+  }
+
+  // Adjacent sibling selector removes top margin from H2 only if it's the first element immediately after an h1
+  // h1 + h2
+  // h1 has a bottom margin of 1rem, h2 default top margin is 3.157. Decrease that by 1 rem to make spacing consistent.
+  .entry-header + .entry-content h2:first-child {
+    margin-top: 2.157rem;
+  }
+
+  h3, h3.entry-title {
+    font-size: $h3-font-size;
+    margin-top: 2.369rem;
+  }
+  h4 {
+    font-size: $h4-font-size;
+    margin-top: 2.369rem;
+  }
+  h5 {
+    font-size: $h5-font-size;
+    margin-top: 2.369rem;
+  }
+  h6 {
+    font-size: $h6-font-size;
+    margin-top: 2.369rem;
+  }
+
+  /**
+   * Accessibility change
+   * Longer strings of all uppercase text can be a little harder to read, especially for users with some cognitive disabilities.
+   * Making it regular case also makes it more visually consistent with all other heading levels
+   * and increases the visual hierarchy that should exist between heading levels.
+   */
+  .entry-content h3 {
+    text-transform: none;
+  }
+
+  a, p a {
+    @include anchor-links;
+  }
+
+  p a {
+    font-weight: 600;
+  }
+
+  mark {
+    background: $mark-bg;
+    color: #000;
+  }
+
+} // end .content-sidebar-wrap .content

@@ -1,0 +1,30 @@
+/**
+ * Styles for the top-level it.tamus.edu site.
+ * It has a different header from the sub-sites for some reason...
+ */
+.site-header .header-design-element {
+  display: none;
+}
+
+/*****************************************************************************
+ * Start of SCSS for desktop - 992px is the Bootstrap breakpoint for Desktop
+ *****************************************************************************/
+@media only screen and (min-width: 992px) {
+  .site-header .wrap .tamus-wrap-title-and-logo {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .site-header .wrap .tamus-wrap-title-and-logo #tamus-oit-logo {
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    top: 32px;
+  }
+  .site-header .header-design-element {
+    position: absolute;
+    display: block;
+    top: 39px;
+  }
+}/*# sourceMappingURL=top-level-site.css.map */

@@ -1,0 +1,245 @@
+/**
+ * Page Builder styling
+ *
+ * @since 2.1.0
+ */
+
+@import 'variables';
+@import 'mixins';
+
+.site-container {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .banner-cover {
+    text-align: left;
+    background-color: $verydarkblue;
+    margin: -55px -35px 50px -30px;
+    width: 100vw;
+    display: block;
+
+    .wp-block-column {
+      border-top: none;
+    }
+
+    .banner-icon {
+      display: block;
+      height: 130px;
+      width: 130px;
+    }
+
+    .banner-content {
+      color: #fff;
+      padding: 50px 35px 30px 35px;
+
+      /* Display as an h1 */
+      h1, h2 {
+        font-size: 1.8rem;
+        margin: 0 0 10px 0;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      a {
+        color: #fff;
+        text-decoration-color: #fff;
+
+        &:hover, &focus, &:active {
+          text-decoration-style: solid;
+          border-bottom: none;
+        }
+      }
+
+      .blue-button {
+        width: 400px;
+        display: block;
+        margin: 40px 0 20px 0;
+      }
+
+      .blue-button a {
+        font-size: 1rem;
+        border: 0.5px solid #fff;
+        border-radius: 4px;
+        padding: 7px 15px;
+        text-decoration: none;
+        text-align: center;
+        background-color: $blue;
+
+        &:hover, &:focus, &:focus-within, &:active {
+          background-color: #fff;
+          color: $blue;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .content .entry-header .entry-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  // First h2 after breadcrumbs
+  .breadcrumb + #column-row-0 .col-12 h2:first-child {
+    margin-top: 0;
+  }
+
+  // Adjacent sibling selector removes top margin from H2 only if it's the first element immediately after an h
+  // h1 has a bottom margin of 1rem, h2 default top margin is 3.157. Decrease that by 1 rem to make spacing consistent.
+  .entry-header + #column-row-0 .col-12 h2:first-child {
+    margin-top: 2.157rem;
+  }
+
+  .modal {
+    .modal-body {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    button.close {
+      width: 55px;
+      height: 55px;
+      margin: 10px 10px 0 auto;
+      opacity: 1;
+      text-align: center;
+      padding: 0;
+    }
+  }
+
+  .cards .card {
+    border-left: 1px solid $border-gray;
+    border-right: 1px solid $border-gray;
+    border-bottom: 1px solid $border-gray;
+    box-shadow: none;
+  }
+
+  .cards {
+    h2, h3 {
+      font-size: 1.3rem;
+    }
+
+    li {
+      list-style-type: none;
+    }
+  }
+} // .site-container
+
+
+/* Adjustment for h1 going to one line */
+@media only screen and (min-width: 534px) {
+  .tagline {
+    margin-top: 40px;
+  }
+}
+
+
+/* Large mobile */
+@media only screen and (min-width: 760px) {
+  .site-container .banner-cover .blue-button {
+    margin: 80px 0 0 21px;
+  }
+
+  // adjust width on cards to allow for margin without wrapping
+  .col-md-6.card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  .col-md-4.card {
+    flex: 0 0 calc(33.33333% - 1.33333rem);
+  }
+
+  // left margin on even numbered cards
+  .col-md-6.card {
+    &:nth-child(2n) {
+      margin-left: 2rem;
+    }
+  }
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 992px) {
+  .site-container {
+    .banner-cover {
+      /* the banner cover height and content will likely require in-page css to customize for each landing page */
+      background-image: var(--banner_bg_img_url); // set inline in the template-page-builder.php for the banner row
+      background-repeat: no-repeat;
+      background-size: cover;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
+      min-height: 245px;
+      margin: -105px -35px 50px -35px;
+      width: 100vw;
+      max-width: 1140px;
+      display: flex;
+
+      .banner-content {
+        width: 85%;
+        padding-right: 0;
+      }
+
+      .banner-icon {
+        margin-top: 40px;
+      }
+
+      .elevator-pitch {
+        display: block;
+        max-width: 575px;
+        margin: 20px 0 0 0;
+        font-size: 1.1rem;
+      }
+    }
+
+    .modal {
+      top: 17.5rem;
+    }
+
+    // adjust width on cards to allow for margin without wrapping
+    .col-lg-4.card {
+      flex: 0 0 calc(33.33333% - 1.33333rem);
+    }
+  } // .site-container
+
+  .flex-flow-reverse .banner-icon {
+    // Counter intuitively, this pushes the icon to the left. Small adjustment for better alignment.
+    margin-right: 5px;
+  }
+
+  .cards.row {
+    align-content: space-between;
+  }
+
+  .col-lg-3.card {
+    flex: 0 0  calc(25% - 1rem);
+
+    &:not(:first-child) {
+      margin-left: auto;
+    }
+  }
+
+} // .site-container
+
+/* Large Desktop */
+@media only screen and (min-width: 1160px) {
+  .site-container .banner-cover {
+    width: calc(100vw - 10px);
+    margin-top: -55px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-3.card {
+    flex: 0 0 calc(25% - 1.5rem);
+
+    &:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+}
