@@ -67,8 +67,8 @@
 @import 'tabs';
 @import 'content';
 @import 'pagination';
-@import 'tablepress-global';
+@import "page-builder";
 @import 'alert';
-@import 'migrate_to_page_css'; // Temporary. These rules are specific to individual pages or templates.
+@import 'jekyll'; // Add any css customization specific to this site here
 @import 'mediaqueries';
 @import 'print';
