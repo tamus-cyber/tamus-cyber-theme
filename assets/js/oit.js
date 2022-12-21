@@ -149,4 +149,7 @@ jQuery(document).ready(function($) {
       $(this).addClass('card-' + [index++]);
   });
 
+  // Add the current year in the footer
+  var currentYear = new Date().getFullYear();
+  $('#year').html(currentYear);
 });
