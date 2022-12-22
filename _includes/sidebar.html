@@ -1,4 +1,3 @@
-
 {% comment %}
   Sidebar navigation with all pages in the current folder listed alphabetically
 {% endcomment %}
@@ -7,7 +6,7 @@
 {% assign current_url = page.url %}
 {% assign page_count = 0 %}
 
-{% capture output = '' %}
+{% capture output-sidebar %}
 <aside id="genesis-sidebar-primary" class="sidebar sidebar-primary widget-area" aria-label="Related links and pages" itemscope=""
   itemtype="https://schema.org/WPSideBar">
   <div class="widget widget_text">
@@ -38,5 +37,5 @@
 
 {% comment %} Output if there is more than one page in a folder {% endcomment %}
 {% if page_count > 1 %}
-  {{ output }}
+  {{ output-sidebar }}
 {% endif %}
