@@ -6,13 +6,10 @@ nav-items:
     url: /about/index.html
     id: about-dropdown
     subfolderitems:
-      - page: Governance
-        url: /about/governance.html
-      - page: Projects
-        url: /about/projects.html
-      - page: Leadership
-        url: /about/leadership.html
+      - page: HTML Examples
+        url: /about/html-examples.html
+      - page: Typography Examples
+        url: /about/typography.html
   - title: Contact
     url: /contact/index.html
     id: contact-link
-   
