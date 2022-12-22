@@ -1,11 +1,15 @@
 ---
 template-name: full-width
 ---
+{% comment %}
+  Full width content area, no secondary navigation. For home pages & landing pages.
+{% endcomment %}
 
 {% include header.html %}
   <div class="site-inner">
     <div class="content-sidebar-wrap">
       <main class="content" id="genesis-content">
+        {% include breadcrumbs.html %}
         {{ content }}
       </main>
     </div>
