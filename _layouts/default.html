@@ -2,12 +2,18 @@
 template-name: default
 ---
 
+{% comment %}
+  Content area on the left, sidebar nav on the right.
+{% endcomment %}
+
 {% include header.html %}
   <div class="site-inner">
     <div class="content-sidebar-wrap">
       <main class="content" id="genesis-content">
+        {% include breadcrumbs.html %}
         {{ content }}
       </main>
+      {% include sidebar.html %}
     </div>
   </div>
 {% include footer.html %}
