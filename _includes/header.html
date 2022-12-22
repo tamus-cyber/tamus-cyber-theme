@@ -35,7 +35,12 @@
   <link rel="icon" href="/favicon.ico" />
 </head>
 
-<body class="page-template full-width-content" itemscope itemtype="https://schema.org/WebPage">
+{% assign body_class = 'content-sidebar' %}
+{% if page.layout == 'full-width' %}
+  {% assign body_class = 'full-width-content' %}
+{% endif %}
+
+<body class="page-template {{ body_class }}" itemscope itemtype="https://schema.org/WebPage">
   <div class="site-container">
     <header class="site-header" itemscope="" itemtype="https://schema.org/WPHeader">
       <div class="wrap">
