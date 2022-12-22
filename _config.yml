@@ -60,8 +60,6 @@ exclude:
   - package.json
   - package-lock.json
   - '*.code-workspace'
-  - README.md
-
 
 # Don't clobber these files in the destination folder
 keep_files:
