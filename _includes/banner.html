@@ -1,0 +1,20 @@
+<div class="banner-cover flex-row-reverse"
+  {% if page.banner-bg != blank %}
+  style="background-image: url({{ page.banner-bg }});
+  {% endif %}
+  ">
+  <div class="banner-content">
+    <h1>
+      {% if page.first-heading %}
+        {{ page.first-heading }}
+      {% else %}
+        {{ page.title }}
+      {% endif %}
+    </h1>
+    {{ page.banner-content }}
+  </div>
+  {% if page.banner-icon != blank %}
+  <img alt="" class="banner-icon d-none d-lg-block" height="130" width="130"
+       src="{{ page.banner-icon }}">
+  {% endif %}
+</div>
