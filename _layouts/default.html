@@ -6,11 +6,17 @@ template-name: default
   Content area on the left, sidebar nav on the right.
 {% endcomment %}
 
+{% assign: heading1 = page.title %}
+{% if page.first-heading %}
+  {% assign: heading1 = page.first-heading %}
+{% endif %}
+
 {% include header.html %}
   <div class="site-inner">
     <div class="content-sidebar-wrap">
       <main class="content" id="genesis-content">
         {% include breadcrumbs.html %}
+        <h1>{{ heading1 }}</h1>
         {{ content }}
       </main>
       {% include sidebar.html %}
