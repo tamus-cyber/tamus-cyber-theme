@@ -1,0 +1,42 @@
+
+{% comment %}
+  Sidebar navigation with all pages in the current folder listed alphabetically
+{% endcomment %}
+
+{% assign current_dir = page.dir %}
+{% assign current_url = page.url %}
+{% assign page_count = 0 %}
+
+{% capture output = '' %}
+<aside id="genesis-sidebar-primary" class="sidebar sidebar-primary widget-area" aria-label="Related links and pages" itemscope=""
+  itemtype="https://schema.org/WPSideBar">
+  <div class="widget widget_text">
+    <div class="widget-wrap">
+      <nav class="widget widget_recent_entries">
+        <div class="widget-wrap">
+          <h2 class="widget-title widgettitle">Related</h2>
+          <ul>
+            {% assign pages = site.pages | sort:'title' | where_exp: 'page', 'page.title' %}
+              {% for page in pages %}
+                {% if page.dir == current_dir %}
+                  {% if page.url == current_url %}
+                    <li>{{ page.title }}</li>
+                    {% assign page_count = page_count | plus: 1 %}
+                  {% else %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                    {% assign page_count = page_count | plus: 1 %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</aside>
+{% endcapture %}
+
+{% comment %} Output if there is more than one page in a folder {% endcomment %}
+{% if page_count > 1 %}
+  {{ output }}
+{% endif %}
