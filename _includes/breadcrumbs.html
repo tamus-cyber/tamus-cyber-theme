@@ -1,4 +1,9 @@
-{% comment %} Code from https://jekyllcodex.org/without-plugins/ {% endcomment %}
+{% comment %} 
+  Code from https://jekyllcodex.org/without-plugins/
+  Displays on all pages except home.
+{% endcomment %}
+
+{% capture output-breadcrumbs %}
 <div class="breadcrumb">
   {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
   <a href="/"><span class="breadcrumb-link-text-wrap">Home</span></a>
@@ -15,3 +20,8 @@
     {% endif %}
   {% endfor %}
 </div>
+{% endcapture %}
+
+{% if (page.url != '/') %}
+  {{ output-breadcrumbs }}
+{% endif %}
