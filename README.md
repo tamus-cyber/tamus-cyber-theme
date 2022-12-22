@@ -5,14 +5,15 @@ Jekyll site with the OIT website look and feel
 Options for the variables you can use in the front matter:
 
 **layout:**
+
 Options are 'default' and 'full-width'
 Determines the layout template that is selected. Templates are in _layouts
 
 **title:**
-The page title. Used in the <title> tag in the html head. 
+The page title. Used in the `<title>` tag in the html head. 
 
 **first-heading:**
-Used as the <h1> heading for the page. **title:** will be used as the h1 text if the **first-heading:** variable isn't set. 
+Used as the `<h1>` heading for the page. **title:** will be used as the h1 text if the **first-heading:** variable isn't set. 
 
 **description:**
 Meta description for the page. This is displayed under the title in search results. Briefly describe the content a user will find on this page. 250 characters or less. 
@@ -22,7 +23,7 @@ Options are 'true' and 'false'
 If set to true, add a banner at the top of the content area.
 
 **banner-content:**
-html content for the banner. (Use paragraph tags to wrap content <p>).
+html content for the banner. (Use paragraph tags to wrap content `<p>`).
 
 **banner-bg:**
 Path to a background image. Banner images should be stored in /assets/images/banners/
@@ -43,3 +44,5 @@ For example, banner-icon: "/assets/images/icons/collaboration.jpg"
 ## Bootstrap CSS framework
 
 ## Jekyll
+https://jekyllrb.com/docs/
+https://jekyllrb.com/docs/liquid/
