@@ -1,0 +1,17 @@
+{% comment %} Code from https://jekyllcodex.org/without-plugins/ {% endcomment %}
+<div class="breadcrumb">
+  {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+  <a href="/"><span class="breadcrumb-link-text-wrap">Home</span></a>
+  {% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+      <span aria-label="breadcrumb separator">/</span>
+      {{ page.title }}
+    {% else %}
+      <span aria-label="breadcrumb separator">/</span>
+      <a class="breadcrumb-link-wrap"
+         href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
+         <span class="breadcrumb-link-text-wrap">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</span>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
