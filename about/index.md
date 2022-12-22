@@ -1,9 +1,10 @@
 ---
-layout:     default
-title:      About
-description: "Add a meta description for this page."
+layout:         default
+title:          About
+first-heading:  About (department / group name here)
+description:    "Add a meta description for this page."
 ---
 
-# About (department / group name here)
+The about page should have information that the target audience needs to know about us.
 
-Add information that the target audience should know about us.
+See README.md for more information about this Jekyll template.
