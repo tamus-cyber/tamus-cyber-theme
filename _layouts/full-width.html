@@ -2,16 +2,30 @@
 template-name: full-width
 ---
 {% comment %}
-  Full width content area, no secondary navigation. For home pages & landing pages.
+  Full width content area, no secondary navigation. For home pages and landing pages.
+  Optionally includes a banner at the top.
 {% endcomment %}
 
+{% assign: heading1 = page.title %}
+{% if page.first-heading %}
+  {% assign: heading1 = page.title %}
+{% endif %}
+
 {% include header.html %}
+
   <div class="site-inner">
     <div class="content-sidebar-wrap">
       <main class="content" id="genesis-content">
-        {% include breadcrumbs.html %}
+        {% if page.banner == true %}
+          {% include banner.html %}
+          {% include breadcrumbs.html %}
+        {% else %}
+          {% include breadcrumbs.html %}
+          <h1>{{ heading1 }}</h1>
+        {% endif %}
         {{ content }}
       </main>
     </div>
   </div>
+
 {% include footer.html %}
