@@ -8,7 +8,7 @@ template-name: full-width
 
 {% assign: heading1 = page.title %}
 {% if page.first-heading %}
-  {% assign: heading1 = page.title %}
+  {% assign: heading1 = page.first-heading %}
 {% endif %}
 
 {% include header.html %}
