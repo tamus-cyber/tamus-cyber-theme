@@ -4,33 +4,33 @@ This is a Jekyll site template with the OIT website look and feel. To use, clone
 ## Front matter variables
 Options for the variables you can use in the front matter:
 
-**layout:**
+* **layout:**
 Options are 'default' and 'full-width'
 Determines the layout template that is selected. Templates are in _layouts
 
-**title:**
+* **title:**
 The page title. Used in the `<title>` tag in the html head. 
 
-**first-heading:**
+* **first-heading:**
 Used as the `<h1>` heading for the page. **title:** will be used as the h1 text if the **first-heading:** variable isn't set. 
 
-**description:**
+* **description:**
 Meta description for the page. This is displayed under the title in search results. Briefly describe the content a user will find on this page. 250 characters or less. 
 
-**banner:**
-Options are 'true' and 'false'
+* **banner:**
+Options are `true` and `false`
 If set to true, add a banner at the top of the content area.
 
-**banner-content:**
+* **banner-content:**
 html content for the banner. (Use paragraph tags to wrap content `<p>`).
 
-**banner-bg:**
+* **banner-bg:**
 Path to a background image. Banner images should be stored in /assets/images/banners/
-For example, banner-bg: "/assets/images/banners/collaboration-header-background.jpg"
+For example, `banner-bg: "/assets/images/banners/collaboration-header-background.jpg"`
 
-**banner-icon:**
+* **banner-icon:**
 Path to an icon image. Icon images should be stored in /assets/images/icons/
-For example, banner-icon: "/assets/images/icons/collaboration.jpg"
+For example, `banner-icon: "/assets/images/icons/collaboration.jpg"`
 
 ## Site title
 The site title appears in the top-left of the banner area. It links back to the homepage. The text can be updated in _includes/header.html
@@ -53,7 +53,7 @@ The css for the site is built from compiled SASS. Don't edit the files in _scss,
 The Bootstrap front-end framework is included in this theme. It provides utilities for adding UI elements like tabs, accordions, layouts that work from mobile to desktop, modal windows, etc. [Bootstrap 4 documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/).
 
 ## security.txt
-**/.well-known/security.txt** provides information for any security researches who are looking for the appropriate way to contact us.
+**/.well-known/security.txt** provides information for any security researches who are looking for the appropriate way to contact us. [More about the security.txt standard](https://securitytxt.org/).
 
 ## Jekyll
 Documentation for the Jekyll static site generator and the Liquid template language: 
