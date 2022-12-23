@@ -1,5 +1,5 @@
 # TAMUS Jekyll Template
-Jekyll site with the OIT website look and feel
+This is a Jekyll site template with the OIT website look and feel. To use, clone this repository, run Jekyll and customize.
 
 ## Front matter variables
 Options for the variables you can use in the front matter:
@@ -52,6 +52,11 @@ The css for the site is built from compiled SASS. Don't edit the files in _scss,
 ## Bootstrap CSS framework
 The Bootstrap front-end framework is included in this theme. It provides utilities for adding UI elements like tabs, accordions, layouts that work from mobile to desktop, modal windows, etc. [Bootstrap 4 documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/).
 
+## security.txt
+**/.well-known/security.txt** provides information for any security researches who are looking for the appropriate way to contact us.
+
 ## Jekyll
-https://jekyllrb.com/docs/
-https://jekyllrb.com/docs/liquid/
+Documentation for the Jekyll static site generator and the Liquid template language: 
+
+* https://jekyllrb.com/docs/
+* https://jekyllrb.com/docs/liquid/

@@ -1,4 +1,4 @@
-# Our information security contact information
+# Texas A&M University System information security contact info
 Contact: mailto:contact@soc.tamus.edu
 Contact: tel:+19792340030
 
