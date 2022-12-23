@@ -205,6 +205,7 @@
         justify-content: space-between;
         flex-direction: row;
         margin-bottom: 10px;
+        margin-left: 0;
         height: 101px; // prevent resize flash when services, contact, about are pulled in with js
 
         .title-area {

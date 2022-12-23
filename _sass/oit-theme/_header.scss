@@ -18,6 +18,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 25px;
+      margin-left: 30px;
 
       // Flip the order of elements. Makes the logo first and title second on mobile. Desktop version in _mediaqueries.scss
       flex-direction: column-reverse;
