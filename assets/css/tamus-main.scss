@@ -1,6 +1,6 @@
 ---
-# this ensures Jekyll reads the file to be transformed into CSS later
-# only Main files contain this front matter, not partials.
+# This frontmatter ensures Jekyll reads the file to be transformed into css.
+# Only Main scss files need to contain this front matter, not partials.
 ---
 
 /**
@@ -10,65 +10,65 @@
  * @since 1.0.0
  */
 
-@import "variables";
+@import 'oit-theme/variables';
 
 
 // Add Bootstrap 4
-@import "bootstrap/mixins";
-@import "bootstrap/root";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-@import "bootstrap/transitions";
-@import "bootstrap/dropdown";
-@import "bootstrap/button-group";
-@import "bootstrap/input-group";
-@import "bootstrap/custom-forms";
-@import "bootstrap/nav";
-@import "bootstrap/navbar";
-@import "bootstrap/card";
-@import "bootstrap/breadcrumb";
-@import "bootstrap/pagination";
-@import "bootstrap/badge";
-@import "bootstrap/jumbotron";
-@import "bootstrap/alert";
-@import "bootstrap/progress";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/close";
-@import "bootstrap/modal";
-@import "bootstrap/tooltip";
-@import "bootstrap/popover";
-@import "bootstrap/carousel";
-@import "bootstrap/utilities";
-@import "bootstrap/print";
+@import 'bootstrap/mixins';
+@import 'bootstrap/root';
+@import 'bootstrap/reboot';
+@import 'bootstrap/type';
+@import 'bootstrap/images';
+@import 'bootstrap/code';
+@import 'bootstrap/grid';
+@import 'bootstrap/tables';
+@import 'bootstrap/forms';
+@import 'bootstrap/buttons';
+@import 'bootstrap/transitions';
+@import 'bootstrap/dropdown';
+@import 'bootstrap/button-group';
+@import 'bootstrap/input-group';
+@import 'bootstrap/custom-forms';
+@import 'bootstrap/nav';
+@import 'bootstrap/navbar';
+@import 'bootstrap/card';
+@import 'bootstrap/breadcrumb';
+@import 'bootstrap/pagination';
+@import 'bootstrap/badge';
+@import 'bootstrap/jumbotron';
+@import 'bootstrap/alert';
+@import 'bootstrap/progress';
+@import 'bootstrap/media';
+@import 'bootstrap/list-group';
+@import 'bootstrap/close';
+@import 'bootstrap/modal';
+@import 'bootstrap/tooltip';
+@import 'bootstrap/popover';
+@import 'bootstrap/carousel';
+@import 'bootstrap/utilities';
+@import 'bootstrap/print';
 
 
 // CSS copied from the Genesis framework
-@import 'genesis';
+@import 'oit-theme/genesis';
 
 
 // TAMUS customizations
-@import "mixins";
-@import "typography";
-@import 'structure';
-@import 'header';
-@import 'nav';
-@import 'search';
-@import 'footer';
-@import 'sidebar';
-@import 'cards';
-@import 'accordion';
-@import 'tabs';
-@import 'content';
-@import 'pagination';
-@import "page-builder";
-@import 'alert';
-@import 'jekyll'; // Add any css customization specific to this site here
-@import 'mediaqueries';
-@import 'print';
+@import 'oit-theme/mixins';
+@import 'oit-theme/typography';
+@import 'oit-theme/structure';
+@import 'oit-theme/header';
+@import 'oit-theme/nav';
+@import 'oit-theme/search';
+@import 'oit-theme/footer';
+@import 'oit-theme/sidebar';
+@import 'oit-theme/cards';
+@import 'oit-theme/accordion';
+@import 'oit-theme/tabs';
+@import 'oit-theme/content';
+@import 'oit-theme/pagination';
+@import 'oit-theme/page-builder';
+@import 'oit-theme/alert';
+@import 'oit-theme/mediaqueries';
+@import 'tamus-jekyll-customization'; // Add any css customization specific to this site here
+@import 'oit-theme/print';
