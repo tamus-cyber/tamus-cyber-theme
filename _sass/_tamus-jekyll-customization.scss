@@ -1,0 +1,28 @@
+// CSS specific to the Jekyll version of the OIT theme.
+// Allows customization without overwriting the scss brought over from the WordPress theme
+
+.site-header {
+  .tamus-wrap-title-and-logo {
+    margin-left: 30px;
+  }
+
+  .menu-toggle::before {
+    display: block;
+    height: 20px;
+    width: 20px;
+    top: 1px;
+    background-image: url('/assets/images/icons/material-menu-icon.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    content: " ";
+  }
+
+  .menu-toggle:hover::before,
+  .menu-toggle:focus::before {
+    background-image: url('/assets/images/icons/material-menu-icon-blue.svg');
+  }
+
+  .menu-toggle.activated::before {
+    background-image: url('/assets/images/icons/material-close-icon-blue.svg');
+  }
+}
