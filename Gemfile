@@ -31,6 +31,12 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
+# Lock 'sassc' gem to `v2.1.x` on JRuby builds since newer versions of the gem
+# have issues with Rails 6
+# https://stackoverflow.com/questions/62720043/rails-why-is-bundle-install-frozen-up-by-sassc-2-4-0
+gem "sassc", "~> 2.1.0", :platforms => [:jruby]
+
+
 # Jekyll plugin to silently generate a sitemaps.org compliant sitemap for your Jekyll site
 gem 'jekyll-sitemap'
 
