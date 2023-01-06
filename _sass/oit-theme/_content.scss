@@ -5,10 +5,12 @@
  */
 
 
+/* Disabling since Bootstrap does not contain sr-only anymore
 .hide {
   // .hide was already in use before we merged the code, referencing bootstrap's sr-only
   @include sr-only();
 }
+*/
 
 // For showing a sr-only child element when the parent is focused
 .sr-only-focusable-inside:active, .sr-only-focusable-inside:focus, .sr-only-focusable-inside:focus-within {
