@@ -14,6 +14,11 @@
 
 
 // Add Bootstrap 4
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'bootstrap/grid';
+
 @import 'bootstrap/accordion';
 @import 'bootstrap/alert';
 @import 'bootstrap/badge';
@@ -26,13 +31,10 @@
 @import 'bootstrap/containers';
 @import 'bootstrap/dropdown';
 @import 'bootstrap/forms';
-@import 'bootstrap/functions';
-@import 'bootstrap/grid';
 @import 'bootstrap/helpers';
 @import 'bootstrap/images';
 @import 'bootstrap/list-group';
 @import 'bootstrap/maps';
-@import 'bootstrap/mixins';
 @import 'bootstrap/modal';
 @import 'bootstrap/nav';
 @import 'bootstrap/navbar';
