@@ -50,20 +50,14 @@
               <li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li>
               <li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li>
             </ul>
-            <div class="site-title" itemprop="headline"><a href="/">Site Title Goes Here</a>
+            <div class="site-title" itemprop="headline"><a href="/">{{ site.title }}</a>
             </div>
           </div>
           <div class="widget-area header-widget-area"> <a href="https://it.tamus.edu/" id="tamus-oit-logo">
               <img
-                src="/assets/images/logos/tamus-oit-logo.svg"
-                alt="Logo, Texas A&amp;M University System, Office of Information Technology">
+                src="/assets/images/logos/cyber-logo.svg"
+                alt="Logo, Texas A&amp;M University System Cybersecurity">
             </a>
-            <ul id="oit-site-sub-menu" style="display: flex;">
-              <li class="menu-item"><a href="https://it.tamus.edu/services/">Services</a></li>
-              <li class="menu-item"><a href="https://it.tamus.edu/contacts/">Contact <span class="sr-only">the Office of
-                    Information Technology</span></a></li>
-              <li class="menu-item"><a href="https://it.tamus.edu/search/">Search OIT</a></li>
-            </ul>
           </div>
         </div>
 
@@ -100,6 +94,7 @@
                   </li>
                 {% endfor %}
               {% endif %}
+              {% if site.search == true %}
               <li class="menu-item search-form-wrapper">
                 <form method="get" name="search" class="search-form" role="search"
                   action="https://it.tamus.edu/">
@@ -111,6 +106,7 @@
                   <meta content="https://it.tamus.edu/?s={s}" itemprop="target">
                 </form>
               </li>
+              {% endif %}
               <li id="oit-site-menu" class="d-lg-none">
                 <a id="oit-link" href="https://it.tamus.edu/" itemprop="url" class="sf-with-ul">
                   <span itemprop="name">Office of Information Technology</span>

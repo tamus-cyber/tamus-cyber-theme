@@ -206,12 +206,12 @@
         flex-direction: row;
         margin-bottom: 10px;
         margin-left: 0;
-        height: 101px; // prevent resize flash when services, contact, about are pulled in with js
+        height: 61px; // prevent resize flash when services, contact, about are pulled in with js
 
         .title-area {
           min-width: 30%;
           width: calc(100% - (($sitepadding + $headerrightwidth) * 1px));
-          padding-top: 60px;
+          padding-top: 15px;
         }
 
         #tamus-oit-logo {
@@ -221,7 +221,7 @@
       }
     } // end .wrap
 
-    // Hide logo and decrease header size after the user has scrolled down the page
+    /* // Hide logo and decrease header size after the user has scrolled down the page
     &.scrolled {
       .wrap {
         .tamus-wrap-title-and-logo {
@@ -251,7 +251,7 @@
           }
         }
       }
-    } // end .scrolled
+    } // end .scrolled */
   } // end .site-header
 
 
