@@ -71,11 +71,6 @@ breadcrumbs:
     hide: false  # show breadcrumbs on root/home page
     image: false # Show image or title text
 
-breadcrumbs:
-  root:
-    hide: false  # show breadcrumbs on root/home page
-    image: false # Show image or title text
-
 sass:
   sass_dir: _sass
   style: compact # possible values: nested expanded compact compressed
