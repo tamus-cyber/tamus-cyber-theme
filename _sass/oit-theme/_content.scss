@@ -5,16 +5,14 @@
  */
 
 
-/* Disabling since Bootstrap does not contain sr-only anymore
 .hide {
-  // .hide was already in use before we merged the code, referencing bootstrap's sr-only
-  @include sr-only();
+  // .hide was already in use before we merged the code, referencing bootstrap's visually-hidden
+  @include visually-hidden();
 }
-*/
 
-// For showing a sr-only child element when the parent is focused
-.sr-only-focusable-inside:active, .sr-only-focusable-inside:focus, .sr-only-focusable-inside:focus-within {
-  .sr-only {
+// For showing a visually-hidden child element when the parent is focused
+.visually-hidden-focusable-inside:active, .visually-hidden-focusable-inside:focus, .visually-hidden-focusable-inside:focus-within {
+  .visually-hidden {
     position: absolute;
     width: auto;
     height: auto;
@@ -197,8 +195,8 @@
     color: $black;
 
     // Use Bootstrap's accessibility classes to make the caption visible to screen readers and people using keyboard navigation
-    @include sr-only();
-    @include sr-only-focusable();
+    @include visually-hidden();
+    @include visually-hidden-focusable();
   }
 
   th, .tablepress tfoot th, .tablepress thead th {
