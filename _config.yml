@@ -24,6 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+logolinkurl: "/" # the a link for the logo image
 encoding: UTF-8
 port: 4001
 
