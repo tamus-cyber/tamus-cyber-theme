@@ -22,3 +22,15 @@
     background-image: url('/assets/images/icons/material-close-icon-blue.svg');
   }
 }
+
+main.content ol, ul {
+    padding-left: 2em;
+}
+
+main.content ol li {
+  list-style-type: decimal;
+}
+
+main.content ul li {
+  list-style-type: disc;
+}
