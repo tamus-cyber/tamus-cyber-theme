@@ -20,7 +20,7 @@ template-name: full-width
           {% include breadcrumbs.html %}
         {% else %}
           {% include breadcrumbs.html %}
-          <h1>{{ heading1 }}</h1>
+          {% if page.noheader != true %}<h1>{{ heading1 }}</h1>{% endif %}
         {% endif %}
         {{ content }}
       </main>

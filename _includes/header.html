@@ -97,13 +97,13 @@
               {% if site.search == true %}
               <li class="menu-item search-form-wrapper">
                 <form method="get" name="search" class="search-form" role="search"
-                  action="https://it.tamus.edu/">
+                  action="/search">
                   <label class="search-form-label screen-reader-text" for="header-search-input">Search</label>
-                  <input type="text" value="" class="search-field" name="s" id="header-search-input"
+                  <input type="text" class="search-field" name="q" id="header-search-input"
                     placeholder="Search" itemprop="query-input">
                   <label for="header-search-button">Search</label>
                   <input type="submit" class="search-button" id="header-search-button" value="Submit search">
-                  <meta content="https://it.tamus.edu/?s={s}" itemprop="target">
+                  <meta content="/search?q={s}" itemprop="target">
                 </form>
               </li>
               {% endif %}
