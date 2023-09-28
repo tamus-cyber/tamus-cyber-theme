@@ -238,11 +238,27 @@
   }
 
   .breadcrumb {
-    // Make breadcrumbs look the same after Bootstrap integration
-    span[aria-label="breadcrumb separator"] {
-      padding: 0 5px;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      display: inline;
+      padding-right: 5px;
+
+      a {
+	color: $blue;
+	text-decoration: none;
+      }
+
+      a:hover {
+	text-decoration: underline;
+      }
     }
-  }
+
+    li+li:before {
+      content: "/\00a0";
+    }
+}
 
   .post {
     margin-bottom: 3.5rem;

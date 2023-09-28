@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="Created" property="dc:created" content="2020-10-07" />
   <meta name="Last-Modified" property="dc:modified" content="2022-10-27" />
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }}{% if page.title != site.title %} | {{ site.title }}{% endif %}</title>
   {% if page.description %}
   <meta name="description" content="{{ page.description }}" />
   {% endif %}
@@ -50,7 +50,7 @@
               <li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li>
               <li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li>
             </ul>
-            <div class="site-title" itemprop="headline"><a href="/">{{ site.title }}</a>
+            <div class="site-title" itemprop="headline"><a href="/">{% if site.html_title %}{{ site.html_title }}{% else %}{{ site.title }}{% endif %}</a>
             </div>
           </div>
           <div class="widget-area header-widget-area"> <a href="{{ site.logolinkurl }}" id="tamus-oit-logo">
