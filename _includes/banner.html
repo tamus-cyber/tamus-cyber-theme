@@ -1,10 +1,10 @@
 <div class="banner-cover"
-  {% if page.banner-bg != blank %}
+  {% if page.banner-bg %}
   style="background-image: url({{ page.banner-bg }});
   {% endif %}
   ">
-  {% if page.banner-icon != blank %}
-  <img alt="" class="banner-icon" height="130" width="130"
+  {% if page.banner-icon %}
+  <img alt="{{ page.banner-icon-alt }}" class="banner-icon" height="130" width="130"
        src="{{ page.banner-icon }}">
   {% endif %}
   <div class="banner-content">
@@ -15,6 +15,6 @@
         {{ page.title }}
       {% endif %}
     </h1>
-    {{ page.banner-content }}
+    <p>{{ page.banner-content }}</p>
   </div>
 </div>
