@@ -1,0 +1,5 @@
+<div class="col-12 col-md-12 card {{ include.color }}">
+	<h2>{{ include.title }}</h2>
+	{{ include.content }}
+	{% if include.read_more_url %}<p class="text-end"><a href="{{ include.read_more_url }}">Read more about {{ include.title }} &gt;</a></p>{% endif %}
+</div>
