@@ -30,6 +30,16 @@
       // Flip the order of elements. Makes the logo first and title second on mobile. Desktop version in _mediaqueries.scss
       flex-direction: column-reverse;
     }
+
+    .tamus-site-main {
+      .header-widget-area {
+        width: 100%;
+      }
+
+      #tamus-oit-logo img {
+        height: 56px;
+      }
+    }
 	} // end .wrap
 
 	.title-area {
