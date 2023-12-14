@@ -85,15 +85,16 @@
   <div class="site-container">
     <header class="site-header" itemscope="" itemtype="https://schema.org/WPHeader">
       <div class="wrap">
-        <div class="tamus-wrap-title-and-logo">
+        <div class="tamus-wrap-title-and-logo{% if site.type == 'main' %} tamus-site-main{% endif %}">
           <div class="title-area">
             <ul class="genesis-skip-link">
               <li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li>
               <li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li>
             </ul>
-            <div class="site-title" itemprop="headline"><a href="/">{% if site.html_title %}{{ site.html_title }}{% else %}{{ site.title }}{% endif %}</a>
-            </div>
+            {% if site.type != 'main' %}<div class="site-title" itemprop="headline"><a href="/">{% if site.html_title %}{{ site.html_title }}{% else %}{{ site.title }}{% endif %}</a>
+            </div>{% endif %}
           </div>
+          {% if site.type == 'main' %}<img class="header-design-element" src="/assets/images/logos/nav-design-element.svg" alt="">{% endif %}
           <div class="widget-area header-widget-area"> <a href="{{ site.logolinkurl }}" id="tamus-oit-logo">
               <img
                 src="/assets/images/logos/cyber-logo.svg"

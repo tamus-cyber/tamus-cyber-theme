@@ -219,6 +219,11 @@
           margin-bottom: 9px;
         }
       }
+
+      .tamus-site-main {
+        flex-direction: row-reverse;
+        height: 101px;
+      }
     } // end .wrap
 
     /* // Hide logo and decrease header size after the user has scrolled down the page

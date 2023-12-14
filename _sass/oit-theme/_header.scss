@@ -8,6 +8,13 @@
 .site-header {
   z-index: 1001;
 
+  // Show the fancy colored line circuit thing
+  .header-design-element {
+    position: absolute;
+    display: block;
+    top: 39px;
+  }
+
 	.wrap {
 		margin: 0 auto;
 		max-width: $sitewidth * 1px;
