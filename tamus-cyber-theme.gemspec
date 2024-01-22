@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "tamus-cyber-theme"
-  spec.version       = "0.1.6"
+  spec.version       = "0.1.7"
   spec.authors       = ["Nick McLarty"]
   spec.email         = ["nmclarty@cyber.tamus.edu"]
 
