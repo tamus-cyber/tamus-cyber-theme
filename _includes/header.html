@@ -3,6 +3,15 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  font-src 'src' https://fonts.googleapis.com; 
+  script-src 'self' https://www.google-analytics.com; 
+  style-src 'self'
+  "/>
+  <meta http-equiv="X-Frame-Options" content="deny"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="Referrer-Policy" content="no-referrer"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="Created" property="dc:created" content="2020-10-07" />
   <meta name="Last-Modified" property="dc:modified" content="2022-10-27" />
